@@ -1,7 +1,6 @@
 [build]
-  base = "cms"
-  command = "npm run seed && npm run seed:blog"
-  publish = "public"
+  command = "npm --prefix cms run seed && npm --prefix cms run seed:blog"
+  publish = "cms/public"
 
 [functions]
   directory = "cms/netlify/functions"
