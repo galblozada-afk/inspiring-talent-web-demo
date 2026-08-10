@@ -4,6 +4,7 @@
 
 [functions]
   directory = "cms/netlify/functions"
+  included_files = ["cms/data/db.json"]
   external_node_modules = ["express", "ejs", "express-session", "session-file-store", "bcryptjs", "helmet", "multer", "serverless-http"]
   node_bundler = "esbuild"
 

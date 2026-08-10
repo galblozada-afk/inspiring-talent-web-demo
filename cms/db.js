@@ -4,8 +4,10 @@
 const fs = require('fs');
 const path = require('path');
 
-const DATA_DIR = path.join(__dirname, 'data');
+const IS_NETLIFY = process.env.NETLIFY === 'true' || Boolean(process.env.NETLIFY);
+const DATA_DIR = IS_NETLIFY ? path.join('/tmp', 'inspiring-talent-data') : path.join(__dirname, 'data');
 const DB_FILE = path.join(DATA_DIR, 'db.json');
+const SEED_DB_FILE = path.join(__dirname, '..', 'data', 'db.json');
 
 const EMPTY_DB = {
   adminUsers: [],       // { id, email, password_hash }
@@ -26,7 +28,10 @@ const EMPTY_DB = {
 
 if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });
 if (!fs.existsSync(DB_FILE)) {
-  fs.writeFileSync(DB_FILE, JSON.stringify(EMPTY_DB, null, 2));
+  const seed = IS_NETLIFY && fs.existsSync(SEED_DB_FILE)
+    ? fs.readFileSync(SEED_DB_FILE, 'utf8')
+    : JSON.stringify(EMPTY_DB, null, 2);
+  fs.writeFileSync(DB_FILE, seed);
 }
 
 function load() {

@@ -1,5 +1,6 @@
 require('dotenv').config();
 const path = require('path');
+const fs = require('fs');
 const express = require('express');
 const session = require('express-session');
 const FileStore = require('session-file-store')(session);
@@ -28,8 +29,10 @@ app.use(express.json());
 app.use('/uploads', express.static(path.join(__dirname, 'public', 'uploads')));
 app.use(express.static(path.join(__dirname, 'public')));
 
+const sessionDir = process.env.NETLIFY ? path.join('/tmp', 'inspiring-talent-sessions') : path.join(__dirname, 'data', 'sessions');
+if (!fs.existsSync(sessionDir)) fs.mkdirSync(sessionDir, { recursive: true });
 app.use(session({
-  store: new FileStore({ path: path.join(__dirname, 'data', 'sessions'), logFn: () => {} }),
+  store: new FileStore({ path: sessionDir, logFn: () => {} }),
   secret: process.env.SESSION_SECRET || 'change-this-secret-please',
   resave: false,
   saveUninitialized: false,
