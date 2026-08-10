@@ -1,5 +1,5 @@
 [build]
-  command = "npm --prefix cms run seed && npm --prefix cms run seed:blog"
+  command = "cd cms && npm run seed && npm run seed:blog"
   publish = "cms/public"
 
 [functions]
