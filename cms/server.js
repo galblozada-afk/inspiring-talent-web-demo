@@ -26,7 +26,9 @@ app.use(helmet({
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use('/uploads', express.static(path.join(__dirname, 'public', 'uploads')));
+const uploadRoot = isServerless ? path.join('/tmp', 'inspiring-talent-uploads') : path.join(__dirname, 'public', 'uploads');
+if (!fs.existsSync(uploadRoot)) fs.mkdirSync(uploadRoot, { recursive: true });
+app.use('/uploads', express.static(uploadRoot));
 app.use(express.static(path.join(__dirname, 'public')));
 
 const isServerless = process.env.NETLIFY || process.env.AWS_LAMBDA_FUNCTION_NAME || process.env.LAMBDA_TASK_ROOT || __dirname.includes('netlify/functions');
