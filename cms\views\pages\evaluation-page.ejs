@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="/assets/img/favicon-inspiring.png">
+  <link rel="apple-touch-icon" href="/assets/img/favicon-inspiring.png">
+  <title>Evaluación de Talento — InspiringTalent®</title>
+  <meta name="description" content="Evaluaciones de talento que convierten información sobre comportamiento, competencias y desempeño en decisiones de desarrollo más claras.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Inter:wght@400;500;600;700&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/site.css">
+  <link rel="stylesheet" href="/evaluation-page.css">
+  <link rel="stylesheet" href="/evaluation-visual-polish.css">
+</head>
+<body class="page-body evaluation-page-body">
+  <%- include('../partials/site-header') %>
+  <main id="contenido" data-evaluation-page>
+    <section class="evaluation-hero">
+      <div class="evaluation-orbit evaluation-orbit--large" aria-hidden="true"></div><div class="evaluation-orbit evaluation-orbit--small" aria-hidden="true"></div>
+      <div class="evaluation-wrap evaluation-hero-grid">
+        <div class="evaluation-hero-copy"><span class="evaluation-eyebrow">Evaluación de talento</span><h1>DATOS QUE ABREN MEJORES DECISIONES.</h1><p>Observamos comportamientos, competencias y perspectivas para convertir información útil en desarrollo, conversaciones y acciones concretas.</p><a href="/contacto?service=evaluacion-de-talento" class="evaluation-link">Diseñemos tu evaluación <span>→</span></a></div>
+        <div class="evaluation-hero-visual" aria-label="Visualización de talentos conectados"><div class="evaluation-visual-grid" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="evaluation-hero-signal" aria-hidden="true"><span>Comportamiento</span><span>Motivadores</span><span>Competencias</span></div><img src="/assets/img/evaluation-assessment-hero.png" alt="Ilustración de un equipo analizando talento con un panel de evaluación"><div class="evaluation-visual-label"><span>Mirada integral</span><strong>Personas · rol · contexto</strong></div></div>
+      </div>
+      <div class="evaluation-wrap evaluation-hero-meta">
+        <div class="evaluation-hero-social" aria-label="Redes sociales de Inspiring Talent">
+          <a href="https://www.linkedin.com/organization/22319247/admin/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a>
+          <a href="https://www.facebook.com/inspiringtalent/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></svg></a>
+          <a href="https://www.instagram.com/inspiringtalentmx/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="evaluation-principle" data-evaluation-reveal aria-labelledby="evaluation-principle-title"><div class="evaluation-wrap evaluation-principle-grid"><div><span class="evaluation-eyebrow">Antes del reporte</span><h2 id="evaluation-principle-title">UNA EVALUACIÓN ABRE UNA CONVERSACIÓN; NO DEFINE A UNA PERSONA.</h2></div><p>Las herramientas aportan un lenguaje común para reconocer fortalezas, hacer visibles tensiones y acordar prioridades. El valor aparece cuando se interpretan con el contexto, el rol y el <strong>criterio humano</strong>.</p></div></section>
+
+    <section class="evaluation-tools" data-evaluation-reveal aria-labelledby="evaluation-tools-title"><div class="evaluation-wrap"><div class="evaluation-section-head"><div><span class="evaluation-eyebrow">Elige la mirada</span><h2 id="evaluation-tools-title">LO QUE NECESITAS ENTENDER CAMBIA LA HERRAMIENTA.</h2></div><p>Combinamos instrumentos cuando aportan perspectivas distintas. Selecciona una herramienta para conocer qué conversación puede abrir.</p></div>
+      <div class="evaluation-tool-layout"><div class="evaluation-tool-list" role="tablist" aria-label="Herramientas de evaluación"><button class="evaluation-tool-card is-evaluation-tool-active" type="button" role="tab" aria-selected="true" data-evaluation-tool="disc"><img src="/assets/img/assessment-tools/disc.png" alt="Logo DISC"><span>Estilos de comportamiento y comunicación</span></button><button class="evaluation-tool-card" type="button" role="tab" aria-selected="false" data-evaluation-tool="eq"><img src="/assets/img/assessment-tools/eq.png" alt="Logo de Inteligencia Emocional"><span>Conciencia emocional y respuesta ante presión</span></button><button class="evaluation-tool-card" type="button" role="tab" aria-selected="false" data-evaluation-tool="alignment"><img src="/assets/img/assessment-tools/talent-alignment.png" alt="Logo Talent Alignment"><span>Ajuste entre capacidades, rol y desempeño</span></button><button class="evaluation-tool-card" type="button" role="tab" aria-selected="false" data-evaluation-tool="axes"><img src="/assets/img/assessment-tools/axes-360.png" alt="Logo AXES 360"><span>Perspectivas para una retroalimentación 360°</span></button></div>
+        <article class="evaluation-tool-detail" data-evaluation-tool-detail aria-live="polite"><span class="evaluation-detail-kicker">Herramienta seleccionada</span><h3 data-evaluation-detail-title>DISC</h3><p data-evaluation-detail-text>Hace visibles preferencias de comportamiento y comunicación para que personas y equipos puedan coordinarse mejor.</p><dl><div><dt>Puede ayudar a mirar</dt><dd data-evaluation-detail-focus>Estilo de comunicación, toma de decisiones y colaboración.</dd></div><div><dt>La conversación que abre</dt><dd data-evaluation-detail-conversation>Cómo adaptar la forma de trabajar con otras personas sin perder autenticidad.</dd></div></dl></article>
+      </div></div>
+    </section>
+
+    <section class="evaluation-process" data-evaluation-reveal aria-labelledby="evaluation-process-title"><div class="evaluation-wrap"><div class="evaluation-process-head"><div><span class="evaluation-eyebrow">De información a movimiento</span><h2 id="evaluation-process-title">EL REPORTE ES EL INICIO. LA PRÁCTICA ES EL RESULTADO.</h2></div><div class="evaluation-process-editorial"><p>Evaluar el talento no es poner una etiqueta ni reducir a las personas a un resultado. Es dar a líderes y equipos un lenguaje común para reconocer fortalezas, anticipar fricciones y tomar decisiones de desarrollo con mayor claridad. Cuando el dato se conversa con respeto y se conecta con el rol, se transforma en oportunidades: mejores conversaciones, aprendizaje más enfocado y personas en espacios donde pueden aportar mejor.</p><p>La evaluación gana valor cuando se convierte en seguimiento: una conversación que reconoce lo que cada persona aporta, aclara dónde puede crecer y abre condiciones para que el equipo avance con mayor confianza. No se trata de encontrar una respuesta definitiva, sino de mirar mejor para acompañar mejor.</p><blockquote><p>“El talento necesita desarrollo. Si al final solo conservas lo que tenías al principio, no llegarás a ser realmente bueno en nada.”</p><cite>— Tyler Cowen, economista y profesor</cite></blockquote></div></div></div>
+    </section>
+
+    <section class="evaluation-uses" data-evaluation-reveal aria-labelledby="evaluation-uses-title"><div class="evaluation-wrap"><span class="evaluation-eyebrow">Una misma información, distintas decisiones</span><h2 id="evaluation-uses-title">CUANDO EL TALENTO SE ENTIENDE MEJOR, EL DESARROLLO GANA FOCO.</h2><div class="evaluation-uses-grid"><article><strong>Selección y movilidad</strong><p>Comparar las demandas del rol con evidencias relevantes, sin reemplazar entrevistas ni juicio profesional.</p></article><article><strong>Liderazgo y equipos</strong><p>Entender cómo se comunican, colaboran y toman decisiones las personas que trabajan juntas.</p></article><article><strong>Desarrollo y sucesión</strong><p>Priorizar capacidades, conversaciones y experiencias que preparen el siguiente paso.</p></article></div></div>
+    </section>
+
+    <section class="evaluation-cta" data-evaluation-reveal><div class="evaluation-wrap"><span class="evaluation-eyebrow">Siguiente conversación</span><h2>HAGAMOS QUE LA INFORMACIÓN SE CONVIERTA EN DESARROLLO.</h2><p>Cuéntanos qué decisión, rol o equipo necesitas comprender mejor. Diseñaremos una ruta de evaluación conectada con tu realidad.</p><a class="btn btn-primary" href="/contacto?service=evaluacion-de-talento">Agenda una consultoría <span>→</span></a></div></section>
+  </main>
+  <%- include('../partials/site-footer') %>
+  <script src="/evaluation-page.js" defer></script>
+</body>
+</html>

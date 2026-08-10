@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="/assets/img/favicon-inspiring.png">
+  <link rel="apple-touch-icon" href="/assets/img/favicon-inspiring.png">
+  <title><%= page.title %> — InspiringTalent®</title>
+  <meta name="description" content="<%= page.intro %>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Inter:wght@400;500;600;700&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/site.css">
+  <link rel="stylesheet" href="/subpage-editorial-hero.css">
+  <link rel="stylesheet" href="/training-hero.css">
+  <link rel="stylesheet" href="/training-page.css">
+</head>
+<body class="page-body training-page-body">
+  <%- include('../partials/site-header') %>
+  <main id="contenido" data-training-page>
+    <%- include('../partials/subpage-editorial-hero', {
+      page,
+      heroImage: '/assets/img/formacion-hero-ilustrado.png',
+      heroVariant: 'training-triangles',
+      heroAlt: 'Sesión de formación con un coach y un equipo, mostrando el símbolo de Inspiring Talent en una tablet'
+    }) %>
+
+    <section class="training-transfer" data-training-reveal aria-labelledby="training-transfer-title">
+      <div class="training-wrap training-transfer-head">
+        <div><span class="training-eyebrow">Aprendizaje aplicado</span><h2 id="training-transfer-title">APRENDER TIENE QUE MOVER EL TRABAJO.</h2></div>
+        <p>Diseñamos experiencias que conectan lo que se aprende con las conversaciones, decisiones y hábitos que necesitan cambiar en el día a día.</p>
+      </div>
+      <ol class="training-wrap training-transfer-rail" aria-label="Cómo se convierte el aprendizaje en práctica">
+        <li><i class="training-transfer-node" aria-hidden="true"></i><button type="button" class="training-transfer-step" data-training-transfer-step aria-pressed="true"><span>Contexto</span><h3>Entender el reto</h3><p>Partimos de situaciones que las personas realmente viven.</p></button></li>
+        <li><i class="training-transfer-node" aria-hidden="true"></i><button type="button" class="training-transfer-step" data-training-transfer-step aria-pressed="false"><span>Práctica</span><h3>Ensayar con intención</h3><p>Convertimos los conceptos en conversaciones, decisiones y herramientas.</p></button></li>
+        <li><i class="training-transfer-node" aria-hidden="true"></i><button type="button" class="training-transfer-step" data-training-transfer-step aria-pressed="false"><span>Aplicación</span><h3>Llevarlo al trabajo</h3><p>Definimos acciones observables para el momento que sigue.</p></button></li>
+        <li><i class="training-transfer-node" aria-hidden="true"></i><button type="button" class="training-transfer-step" data-training-transfer-step aria-pressed="false"><span>Seguimiento</span><h3>Sostener el cambio</h3><p>Revisamos avances, aprendizajes y próximos pasos.</p></button></li>
+      </ol>
+    </section>
+
+    <section class="training-routes" data-training-reveal aria-labelledby="training-routes-title">
+      <div class="training-wrap training-routes-head"><span class="training-eyebrow">Elige tu punto de partida</span><h2 id="training-routes-title">UNA FORMACIÓN PARA CADA MOMENTO DEL CAMINO.</h2></div>
+      <div class="training-wrap training-routes-grid">
+        <article class="training-route">
+          <button type="button" class="training-route-trigger" data-training-route-trigger aria-expanded="false" aria-controls="training-route-empresas"><span class="training-route-label">Para organizaciones</span><strong>Empresas y RH</strong><i aria-hidden="true">+</i></button>
+          <div id="training-route-empresas" class="training-route-panel" hidden><p>Programas a la medida para desarrollar capacidades que se ven en la forma de liderar, colaborar y atender a clientes.</p><dl><div><dt>Experiencias</dt><dd>Talleres, bootcamps, programas de liderazgo y rutas para equipos.</dd></div><div><dt>Foco</dt><dd>Competencias humanas conectadas con retos reales del negocio.</dd></div></dl><a href="/contacto?service=formacion">Diseñar un plan para mi empresa <span>→</span></a></div>
+        </article>
+        <article class="training-route is-training-route-open">
+          <button type="button" class="training-route-trigger" data-training-route-trigger aria-expanded="true" aria-controls="training-route-certificacion"><span class="training-route-label">Para tu siguiente etapa</span><strong>Quiero certificarme</strong><i aria-hidden="true">+</i></button>
+          <div id="training-route-certificacion" class="training-route-panel"><p>Formación para quienes desean profundizar en las competencias de coaching organizacional, liderazgo y trabajo con equipos.</p><dl><div><dt>Experiencias</dt><dd>Certificación en coaching organizacional, coaching de equipos y líder coach.</dd></div><div><dt>Foco</dt><dd>Aprendizaje, práctica guiada y desarrollo de criterio profesional.</dd></div></dl><a href="/contacto?service=formacion">Explorar opciones de formación <span>→</span></a></div>
+        </article>
+        <article class="training-route training-route--coaches">
+          <button type="button" class="training-route-trigger" data-training-route-trigger aria-expanded="false" aria-controls="training-route-coaches"><span class="training-route-label">Para seguir creciendo</span><strong>Soy coach en práctica</strong><i aria-hidden="true">+</i></button>
+          <div id="training-route-coaches" class="training-route-panel" hidden><p>Espacios de reflexión y retroalimentación para que los coaches continúen afinando su práctica y presencia profesional.</p><dl><div><dt>Experiencias</dt><dd>Mentoría, supervisión y formación continua.</dd></div><div><dt>Foco</dt><dd>Observación, práctica reflexiva y desarrollo de competencias.</dd></div></dl><a href="/contacto?service=formacion">Conversar sobre mi práctica <span>→</span></a></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="training-competencies" data-training-reveal aria-labelledby="training-competencies-title">
+      <div class="training-wrap training-competencies-head"><span class="training-eyebrow">Formación para equipos</span><h2 id="training-competencies-title">HABILIDADES QUE CAMBIAN LA FORMA DE TRABAJAR.</h2><p>Las experiencias pueden integrarse en una ruta de desarrollo para tu organización.</p></div>
+      <div class="training-wrap training-competencies-grid">
+        <article><span>01</span><h3>Liderazgo</h3><p>Presencia, dirección y conversaciones que movilizan.</p></article>
+        <article><span>02</span><h3>Comunicación</h3><p>Escucha, claridad y coordinación de acciones.</p></article>
+        <article><span>03</span><h3>Inteligencia emocional</h3><p>Conciencia, regulación y relaciones efectivas.</p></article>
+        <article><span>04</span><h3>Negociación</h3><p>Acuerdos útiles para enfrentar tensiones y conflicto.</p></article>
+        <article><span>05</span><h3>Servicio</h3><p>Experiencias que ponen a las personas en el centro.</p></article>
+        <article><span>06</span><h3>Resiliencia</h3><p>Recursos para adaptarse y aprender ante el cambio.</p></article>
+      </div>
+    </section>
+
+    <section class="training-coaches" data-training-reveal aria-labelledby="training-coaches-title">
+      <div class="training-wrap training-coaches-grid">
+        <div class="training-coaches-quote"><span class="training-eyebrow">Para coaches</span><blockquote>“La formación es el inicio de un camino de aprendizaje continuo: practicar, actualizarse y reflexionar sobre la forma en que acompañamos.”</blockquote><p>Airam Sánchez Santos · MCC Coach Organizacional, Supervisora y Mentora</p></div>
+        <div><span class="training-eyebrow">Práctica profesional</span><h2 id="training-coaches-title">CRECER COMO COACH ES SEGUIR MIRANDO LA PRÁCTICA.</h2><div class="training-coaches-points"><article><h3>Mentoría</h3><p>Retroalimentación sobre sesiones observadas y competencias de coaching.</p></article><article><h3>Supervisión</h3><p>Un espacio reflexivo para ampliar conciencia, ética y mirada sistémica.</p></article><article><h3>Formación continua</h3><p>Actualización y práctica para enriquecer el ejercicio profesional.</p></article></div></div>
+      </div>
+    </section>
+
+    <section class="training-plan" data-training-reveal aria-labelledby="training-plan-title">
+      <div class="training-wrap training-plan-head"><span class="training-eyebrow">Arma tu plan</span><h2 id="training-plan-title">UN PROGRAMA EMPIEZA CON UNA BUENA PREGUNTA.</h2><p>Combinamos experiencias según lo que tu organización necesita mover hoy.</p></div>
+      <div class="training-wrap training-plan-grid"><article><span>El reto</span><h3>¿Qué necesita cambiar?</h3><p>Claridad, liderazgo, coordinación, servicio o colaboración.</p></article><article><span>Las personas</span><h3>¿Quiénes lo hacen posible?</h3><p>Líderes, equipos, talento clave o toda la organización.</p></article><article><span>La experiencia</span><h3>¿Cómo lo llevamos a la práctica?</h3><p>Taller, bootcamp, programa, mentoría o una ruta combinada.</p></article></div>
+    </section>
+
+    <section class="training-final-cta" data-training-reveal>
+      <div class="training-wrap"><span class="training-eyebrow">Siguiente conversación</span><h2>HAGAMOS DEL APRENDIZAJE UNA FORMA DE AVANZAR.</h2><p>Cuéntanos qué habilidades, personas o retos quieres impulsar. Diseñaremos una experiencia útil para tu contexto.</p><a class="btn btn-primary" href="/contacto?service=formacion">Agenda una consultoría <span>→</span></a></div>
+    </section>
+  </main>
+  <%- include('../partials/site-footer') %>
+  <script src="/training-page.js" defer></script>
+</body>
+</html>

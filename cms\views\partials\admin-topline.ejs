@@ -1,0 +1,12 @@
+  <div class="admin-topline">
+    <h1><%= h1 %></h1>
+    <div style="display:flex;align-items:center;gap:14px;">
+      <span class="admin-email"><%= email %></span>
+      <form method="POST" action="/admin/logout" style="margin:0;">
+        <button class="logout-btn" type="submit">Cerrar sesión</button>
+      </form>
+    </div>
+  </div>
+  <% if (flash) { %>
+    <div class="flash <%= flash.type %>"><%= flash.message %></div>
+  <% } %>

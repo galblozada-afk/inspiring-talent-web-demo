@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="/assets/img/favicon-inspiring.png">
+  <link rel="apple-touch-icon" href="/assets/img/favicon-inspiring.png">
+  <title>Blog — InspiringTalent®</title>
+  <meta name="description" content="Artículos sobre liderazgo, coaching organizacional y desarrollo de talento.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Inter:wght@400;500;600;700&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/site.css">
+  <link rel="stylesheet" href="/blog.css">
+</head>
+<body style="background:var(--mist,#F3F4F6);">
+
+  <%- include('../partials/site-header') %>
+
+  <header class="blog-legacy-header scrolled" style="position:relative;">
+    <div class="nav">
+      <a href="/" class="logo"><img src="/assets/logo-inspiringtalent.png" alt="InspiringTalent"></a>
+      <div class="nav-right">
+        <a href="/" class="btn btn-primary">Volver al sitio</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="blog-wrap">
+    <div class="blog-head">
+      <span class="eyebrow">Blog</span>
+      <h1>Ideas sobre liderazgo, talento y cultura organizacional</h1>
+      <p>Perspectivas y herramientas para transformar conversaciones, decisiones y trabajo cotidiano.</p>
+    </div>
+
+    <section class="blog-discovery" aria-label="Buscar artículos por tema o formato">
+      <label class="blog-search-label" for="blogSearch">Encuentra lo que te interesa</label>
+      <input id="blogSearch" class="blog-search" type="search" data-blog-search placeholder="Buscar liderazgo, cultura, coaching…">
+      <div class="blog-filter-rail" role="group" aria-label="Filtrar por badge">
+        <button type="button" class="blog-filter is-active" data-blog-filter="all" aria-pressed="true">Todo</button>
+        <% badges.forEach(function(badge){ %>
+          <button type="button" class="blog-filter" data-blog-filter="<%= badge.id %>" aria-pressed="false" style="--badge-color:<%= badge.color %>"><%= badge.name %></button>
+        <% }) %>
+      </div>
+      <p class="blog-results" data-blog-results aria-live="polite"><%= posts.length %> <%= posts.length === 1 ? 'artículo disponible' : 'artículos disponibles' %></p>
+    </section>
+
+    <% if (!posts.length) { %>
+      <p class="blog-empty">Aún no hay artículos publicados. Vuelve pronto.</p>
+    <% } %>
+
+    <div class="blog-grid">
+      <% posts.forEach(function(p){ %>
+        <a class="blog-card" href="/blog/<%= p.slug %>" data-blog-card data-blog-searchable="<%= (p.title + ' ' + p.excerpt + ' ' + p.badges.map(function(b){ return b.name; }).join(' ')).toLowerCase() %>" data-blog-badges="<%= p.badges.map(function(b){ return b.id; }).join(' ') %>">
+          <% if (p.cover_image) { %>
+            <div class="blog-card-img"><img src="<%= p.cover_image %>" alt="<%= p.title %>" loading="lazy"></div>
+          <% } %>
+          <div class="blog-card-body">
+            <span class="blog-date"><%= p.published_at ? new Date(p.published_at).toLocaleDateString('es-MX', { year:'numeric', month:'long', day:'numeric' }) : '' %></span>
+            <% if (p.badges.length) { %><div class="blog-card-badges"><% p.badges.forEach(function(badge){ %><span class="blog-chip" style="--badge-color:<%= badge.color %>"><%= badge.name %></span><% }) %></div><% } %>
+            <h2><%= p.title %></h2>
+            <% if (p.excerpt) { %><p><%= p.excerpt %></p><% } %>
+            <span class="blog-read-more">Leer más →</span>
+          </div>
+        </a>
+      <% }) %>
+    </div>
+  </main>
+
+  <%- include('../partials/site-footer') %>
+  <script src="/blog.js" defer></script>
+  <footer class="blog-legacy-footer">
+    <div class="wrap foot-bottom" style="border-top:none;">
+      <span>INSPIRING TALENT 2021. ALL RIGHTS RESERVED</span>
+      <a href="/admin/login" aria-label="Acceso administrador" style="opacity:.35;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+          <path d="M16.555 3.843l3.602 3.602a2.877 2.877 0 0 1 0 4.069l-2.643 2.643a2.877 2.877 0 0 1 -4.069 0l-.301 -.301l-6.558 6.558a2 2 0 0 1 -1.239 .578l-.175 .008h-1.172a1 1 0 0 1 -.993 -.883l-.007 -.117v-1.172a2 2 0 0 1 .467 -1.284l.119 -.13l.414 -.414h2v-2h2v-2l2.144 -2.144l-.301 -.301a2.877 2.877 0 0 1 0 -4.069l2.643 -2.643a2.877 2.877 0 0 1 4.069 0z"/>
+          <path d="M15 9h.01"/>
+        </svg>
+      </a>
+    </div>
+  </footer>
+
+</body>
+</html>

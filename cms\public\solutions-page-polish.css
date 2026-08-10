@@ -1,0 +1,71 @@
+/* La ilustración principal permanece estable; el movimiento es exclusivo de las figuras ambientales. */
+.solutions-hero-visual img{animation:none}
+
+/* El encabezado y el texto forman una unidad compacta antes de las tarjetas. */
+.solutions-section-head{grid-template-columns:minmax(0,1fr) minmax(290px,.52fr);gap:clamp(36px,7vw,90px);margin-bottom:38px}
+.solutions-section-title h2{max-width:720px}
+
+/* Mantiene el título, la introducción y los controles cerca, sin huecos innecesarios. */
+.solutions-mix-intro{grid-template-columns:minmax(0,1fr) minmax(290px,.52fr);gap:clamp(36px,7vw,90px);margin-bottom:32px}
+.solutions-mix-title h2{max-width:760px}
+
+@media (max-width:900px){.solutions-mix-intro{grid-template-columns:1fr;gap:24px}}
+
+/* La evidencia se presenta como una lectura editorial continua antes de las gráficas. */
+.solutions-evidence-head{grid-template-columns:minmax(0,1fr) minmax(310px,.62fr);gap:clamp(36px,7vw,90px);align-items:start;margin-bottom:34px}
+.solutions-evidence-title h2{max-width:780px}
+.solutions-evidence-head>div:last-child{padding-top:8px}
+.solutions-data-grid{gap:16px}
+
+@media (max-width:900px){.solutions-evidence-head{grid-template-columns:1fr;gap:24px}.solutions-evidence-head>div:last-child{padding-top:0}}
+
+/* Microinteracción común para que cada frente responda con claridad al explorarlo. */
+.solutions-pillar{position:relative;isolation:isolate;transform:translateY(0);transition:transform .55s var(--solutions-curve),box-shadow .55s var(--solutions-curve),border-color .55s var(--solutions-curve)}
+.solutions-pillar:after{content:"";position:absolute;z-index:-1;inset:0;border:1px solid var(--solutions-mint);opacity:0;transform:scale(.985);transition:opacity .55s var(--solutions-curve),transform .55s var(--solutions-curve);pointer-events:none}
+.solutions-pillar:hover,.solutions-pillar:focus-within{transform:translateY(-9px);border-color:var(--solutions-mint);box-shadow:0 24px 42px rgba(11,30,55,.18)}
+.solutions-pillar:hover:after,.solutions-pillar:focus-within:after{opacity:1;transform:scale(1.015)}
+
+@media (prefers-reduced-motion:reduce){.solutions-pillar,.solutions-pillar:after{transition:none}.solutions-pillar:hover,.solutions-pillar:focus-within{transform:none}}
+
+/* Cada alternativa tiene una imagen editorial integrada en el extremo final del panel. */
+.solutions-tab-panel{grid-template-columns:minmax(0,1.15fr) minmax(150px,.5fr) minmax(152px,.44fr);gap:clamp(18px,2.2vw,30px);overflow:hidden;animation:solutions-tab-enter .48s var(--solutions-curve) both}
+.solutions-tab-panel[hidden]{display:none!important}
+.solutions-tab-panel.is-leaving{animation:solutions-tab-exit .22s ease both}
+.solutions-tab-aside{align-self:stretch;display:flex;flex-direction:column;justify-content:space-between;gap:14px}
+.solutions-tab-aside figure{position:relative;min-height:125px;margin:0;overflow:hidden;border:1px solid rgba(20,226,174,.55);background:#0d2945}
+.solutions-tab-aside img{display:block;width:100%;height:100%;min-height:125px;object-fit:cover;filter:saturate(.84) contrast(1.04);transition:transform .7s var(--solutions-curve),filter .5s var(--solutions-curve)}
+.solutions-tab-aside figure:after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,36,63,.1),rgba(20,226,174,.28));pointer-events:none}
+.solutions-tab-aside figcaption{position:absolute;z-index:1;left:10px;bottom:9px;color:#fff;font:800 9px/1.2 Montserrat,Arial,sans-serif;letter-spacing:.1em;text-transform:uppercase}
+.solutions-tab-aside:hover img{transform:scale(1.07);filter:saturate(1.06) contrast(1.05)}
+.solutions-tab-aside a{align-self:flex-start;color:var(--solutions-mint)}
+@keyframes solutions-tab-enter{from{opacity:0;transform:translate3d(0,16px,0)}to{opacity:1;transform:translate3d(0,0,0)}}
+@keyframes solutions-tab-exit{to{opacity:0;transform:translate3d(0,-10px,0)}}
+@media (max-width:900px){.solutions-tab-panel{grid-template-columns:1fr}.solutions-tab-aside{display:grid;grid-template-columns:minmax(0,220px) auto;align-items:end}.solutions-tab-aside figure{min-height:130px}.solutions-tab-aside img{min-height:130px}}
+@media (max-width:560px){.solutions-tab-aside{grid-template-columns:1fr}.solutions-tab-aside figure,.solutions-tab-aside img{min-height:160px}}
+@media (prefers-reduced-motion:reduce){.solutions-tab-panel,.solutions-tab-panel.is-leaving{animation:none}.solutions-tab-aside img{transition:none}}
+
+/* Banners de acceso directo: una lectura visual de todas las rutas, más allá de las tres categorías. */
+.solutions-option-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:18px}
+.solutions-option-banner{position:relative;isolation:isolate;display:flex;min-height:190px;flex-direction:column;justify-content:flex-end;overflow:hidden;padding:22px;color:#fff;text-decoration:none;border:1px solid rgba(157,223,244,.28);background:#123151;transition:transform .5s var(--solutions-curve),border-color .5s var(--solutions-curve),box-shadow .5s var(--solutions-curve)}
+.solutions-option-banner:before{content:"";position:absolute;z-index:-2;inset:0;background-image:var(--solutions-banner-image);background-position:center;background-size:cover;filter:grayscale(.3) saturate(.72) contrast(1.05);transition:transform .7s var(--solutions-curve),filter .5s var(--solutions-curve)}
+.solutions-option-banner:nth-child(2):before,.solutions-option-banner:nth-child(4):before{background-repeat:no-repeat;background-position:right bottom;background-size:contain}.solutions-option-banner:nth-child(5):before{background-position:65% center}.solutions-option-banner:nth-child(7):before,.solutions-option-banner:nth-child(8):before{background-position:75% center}
+.solutions-option-banner:after{content:"";position:absolute;z-index:-1;inset:0;background:linear-gradient(125deg,rgba(7,24,45,.96) 8%,rgba(13,45,74,.8) 62%,rgba(15,96,107,.5))}
+.solutions-option-banner span{margin-bottom:auto;color:var(--solutions-mint);font:800 9px/1.2 Montserrat,Arial,sans-serif;letter-spacing:.13em;text-transform:uppercase}
+.solutions-option-banner h3{max-width:260px;margin:35px 0 7px;font:400 clamp(25px,2.25vw,35px)/1.08 Anton,Impact,sans-serif;letter-spacing:.01em;text-transform:uppercase}
+.solutions-option-banner p{max-width:270px;margin:0;color:rgba(255,255,255,.77);font:500 12px/1.45 Inter,Arial,sans-serif}
+.solutions-option-banner b{margin-top:15px;color:#fff;font:800 11px/1 Inter,Arial,sans-serif}.solutions-option-banner i{margin-left:8px;font-style:normal;color:var(--solutions-mint);font-size:16px;vertical-align:-1px}
+.solutions-option-banner--nom{background:#075a62}.solutions-option-banner--nom:after{background:linear-gradient(125deg,rgba(5,56,61,.97),rgba(9,111,106,.67))}
+.solutions-option-banner:hover,.solutions-option-banner:focus-visible{transform:translateY(-6px);border-color:var(--solutions-mint);box-shadow:0 20px 38px rgba(2,12,28,.28);outline:0}.solutions-option-banner:hover:before,.solutions-option-banner:focus-visible:before{transform:scale(1.08);filter:grayscale(0) saturate(1.03) contrast(1.02)}
+@media (max-width:900px){.solutions-option-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.solutions-option-grid{grid-template-columns:1fr}.solutions-option-banner{min-height:180px}}
+@media (prefers-reduced-motion:reduce){.solutions-option-banner,.solutions-option-banner:before{transition:none}.solutions-option-banner:hover,.solutions-option-banner:focus-visible{transform:none}}
+
+/* Radar y conversaciones de talento: etiquetas completas y barra de exploración. */
+#solutions-radar{display:block;width:100%;overflow:visible}
+.solutions-radar-labels{font-size:12px}
+.solutions-journey-visual{--solutions-journey-progress:0%;position:relative;margin-top:54px}.solutions-journey-line{position:absolute;top:12px;left:12.5%;right:12.5%;height:3px;overflow:hidden;border-radius:999px;background:rgba(13,140,168,.22)}.solutions-journey-line:after{content:"";display:block;width:var(--solutions-journey-progress);height:100%;border-radius:inherit;background:#0d8ca8;box-shadow:0 0 14px rgba(13,140,168,.55);transition:width 1.05s cubic-bezier(.22,1,.36,1)}
+.solutions-journey-visual ol{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:0;padding:0;list-style:none}.solutions-journey-visual li{padding:0}.solutions-journey-visual li:before{display:none}.solutions-journey-visual li button{display:block;width:100%;padding:38px 9px 6px;border:0;background:transparent;color:var(--solutions-ink);text-align:center;cursor:pointer;transition:transform .45s var(--solutions-curve),color .45s var(--solutions-curve)}
+.solutions-journey-visual li button:before{content:"";position:absolute;top:0;left:50%;width:24px;height:24px;box-sizing:border-box;border:4px solid #eaf5f6;border-radius:50%;background:#9dbcc5;box-shadow:0 0 0 2px #0d8ca8;transform:translateX(-50%);transition:background .55s var(--solutions-curve),box-shadow .55s var(--solutions-curve),scale .55s var(--solutions-curve)}.solutions-journey-visual li button.is-active:before,.solutions-journey-visual li button:hover:before,.solutions-journey-visual li button:focus-visible:before{background:#0d8ca8;scale:1.12;box-shadow:0 0 0 2px #0d8ca8,0 0 18px rgba(13,140,168,.38)}
+.solutions-journey-visual li button span{display:block;margin-bottom:10px;color:#0793a8;font:800 10px/1 Montserrat,Arial,sans-serif;letter-spacing:.1em}.solutions-journey-visual li button b{display:block;min-height:34px;margin:0 0 6px;font:800 12px/1.1 Inter,Arial,sans-serif}.solutions-journey-visual li button p{margin:0;color:var(--solutions-muted);font:500 11px/1.4 Inter,Arial,sans-serif}.solutions-journey-visual li button:hover,.solutions-journey-visual li button:focus-visible{transform:translateY(-4px);color:#007d92;outline:0}
+@media (max-width:560px){.solutions-journey-visual{margin-top:38px}.solutions-journey-visual ol{grid-template-columns:repeat(2,1fr);row-gap:23px}.solutions-journey-line{display:none}.solutions-journey-visual li button b{min-height:0}}
+@media (prefers-reduced-motion:reduce){.solutions-journey-line:after,.solutions-journey-visual li button,.solutions-journey-visual li button:before{transition:none}.solutions-journey-visual li button:hover,.solutions-journey-visual li button:focus-visible{transform:none}}

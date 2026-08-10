@@ -1,0 +1,7 @@
+cms/node_modules/
+cms/.env
+cms/data/db.json
+cms/data/sessions/
+cms/public/uploads/**/*
+!cms/public/uploads/**/.gitkeep
+.npm-cache/

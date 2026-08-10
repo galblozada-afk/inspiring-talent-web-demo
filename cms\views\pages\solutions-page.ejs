@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="/assets/img/favicon-inspiring.png">
+  <link rel="apple-touch-icon" href="/assets/img/favicon-inspiring.png">
+  <title>Soluciones para empresas — Inspiring Talent®</title>
+  <meta name="description" content="Soluciones conectadas de liderazgo, cultura, formación y evaluación para las necesidades reales de tu organización.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/site.css">
+  <link rel="stylesheet" href="/solutions-page.css">
+  <link rel="stylesheet" href="/solutions-page-polish.css">
+</head>
+<body class="solutions-body">
+  <%- include('../partials/site-header') %>
+  <a class="solutions-skip" href="#contenido">Ir al contenido</a>
+
+  <main class="solutions-page" id="contenido">
+    <section class="solutions-hero" aria-labelledby="solutions-title">
+      <i class="solutions-shape solutions-shape--triangle" aria-hidden="true"></i>
+      <i class="solutions-shape solutions-shape--square" aria-hidden="true"></i>
+      <i class="solutions-shape solutions-shape--circle" aria-hidden="true"></i>
+      <div class="solutions-wrap solutions-hero-grid">
+        <div class="solutions-hero-copy" data-solutions-reveal>
+          <span class="solutions-eyebrow">Soluciones para empresas</span>
+          <h1 id="solutions-title">EL TALENTO SE MUEVE EN CONJUNTO.</h1>
+          <p>Cuando liderazgo, cultura y talento se trabajan como una sola conversación, las decisiones se convierten en una práctica que el equipo puede sostener.</p>
+          <a class="solutions-button" href="/contacto?service=soluciones-empresas">Diseñemos tu ruta <span aria-hidden="true">→</span></a>
+        </div>
+        <figure class="solutions-hero-visual" data-solutions-reveal>
+          <img src="/assets/img/solutions-enterprise-hero.png" alt="Equipo de profesionales colaborando alrededor de un tablero de desarrollo de talento" width="1536" height="1024">
+          <figcaption>Una mirada integrada: personas, conversaciones y resultados.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="solutions-pillars" aria-labelledby="solutions-pillars-title">
+      <div class="solutions-wrap">
+        <div class="solutions-section-head" data-solutions-reveal>
+          <div class="solutions-section-title">
+            <span class="solutions-eyebrow">Cómo podemos ayudarte</span>
+            <h2 id="solutions-pillars-title">TRES FRENTES PARA MOVER LO QUE IMPORTA.</h2>
+          </div>
+          <p>Una intervención útil no parte de un catálogo: conecta el reto de negocio con las personas que harán posible el cambio.</p>
+        </div>
+        <div class="solutions-pillar-grid">
+          <article class="solutions-pillar solutions-pillar--light" data-solutions-reveal>
+            <span>Desarrollo de liderazgo</span>
+            <h3>DECISIONES Y CONVERSACIONES QUE DAN DIRECCIÓN.</h3>
+            <p>Para organizaciones que necesitan líderes capaces de sostener prioridades, movilizar equipos y abrir mejores conversaciones.</p>
+            <ul><li>Talleres y bootcamps</li><li>Programas de líder coach</li><li>Coaching ejecutivo</li></ul>
+            <a href="/contacto?service=soluciones-empresas">Hablemos de liderazgo <b aria-hidden="true">→</b></a>
+          </article>
+          <article class="solutions-pillar solutions-pillar--blue" data-solutions-reveal>
+            <span>Equipos y cultura</span>
+            <h3>ACUERDOS QUE HACEN POSIBLE EL TRABAJO COLECTIVO.</h3>
+            <p>Para fortalecer colaboración, coordinación y las prácticas que dan forma a la cultura todos los días.</p>
+            <ul><li>Coaching de equipos</li><li>Cultura de coaching</li><li>Comunicación y negociación</li></ul>
+            <a href="/contacto?service=soluciones-empresas">Fortalezcamos a tu equipo <b aria-hidden="true">→</b></a>
+          </article>
+          <article class="solutions-pillar solutions-pillar--mint" data-solutions-reveal>
+            <span>Talento y cumplimiento</span>
+            <h3>INFORMACIÓN PARA ELEGIR, DESARROLLAR Y CUIDAR.</h3>
+            <p>Para tomar decisiones de desarrollo con una lectura más clara del talento y atender los retos de trabajo actuales.</p>
+            <ul><li>Evaluación de talento</li><li>Planes de desarrollo</li><li>Programa NOM-037</li></ul>
+            <a href="/contacto?service=soluciones-empresas">Conversemos sobre talento <b aria-hidden="true">→</b></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="solutions-mix" aria-labelledby="solutions-mix-title">
+      <div class="solutions-wrap">
+        <div class="solutions-mix-intro" data-solutions-reveal>
+          <div class="solutions-mix-title">
+            <span class="solutions-eyebrow">Un equipo, tres formas de llegar al mismo lugar</span>
+            <h2 id="solutions-mix-title">LA SOLUCIÓN CAMBIA CON TU CONTEXTO.</h2>
+          </div>
+          <p>Formación, coaching organizacional y evaluación de talento se combinan según el reto, las personas involucradas y el momento que vive tu organización.</p>
+        </div>
+        <div class="solutions-tabs" data-solutions-tabs data-solutions-reveal>
+          <div class="solutions-tablist" role="tablist" aria-label="Formas de acompañamiento">
+            <button type="button" id="solutions-tab-formacion" class="solutions-tab is-active" role="tab" aria-selected="true" aria-controls="solutions-panel-formacion" tabindex="0" data-solutions-tab="formacion"><span>01</span> Formación</button>
+            <button type="button" id="solutions-tab-coaching" class="solutions-tab" role="tab" aria-selected="false" aria-controls="solutions-panel-coaching" tabindex="-1" data-solutions-tab="coaching"><span>02</span> Coaching organizacional</button>
+            <button type="button" id="solutions-tab-evaluacion" class="solutions-tab" role="tab" aria-selected="false" aria-controls="solutions-panel-evaluacion" tabindex="-1" data-solutions-tab="evaluacion"><span>03</span> Evaluación de talento</button>
+          </div>
+          <div class="solutions-tab-panels">
+            <article id="solutions-panel-formacion" class="solutions-tab-panel is-active" role="tabpanel" aria-labelledby="solutions-tab-formacion" data-solutions-panel="formacion">
+              <div><span>Aprendizaje aplicado</span><h3>HABILIDADES QUE LLEGAN AL TRABAJO.</h3><p>Experiencias para practicar comunicación, liderazgo, negociación, colaboración y decisiones en situaciones que el equipo reconoce.</p></div>
+              <ul><li>Bootcamps y talleres</li><li>Programas de liderazgo</li><li>Rutas a la medida</li></ul>
+              <aside class="solutions-tab-aside"><figure><img src="/assets/img/program-formacion.jpg" alt="Sesión de formación para equipos"><figcaption>Aprender haciendo</figcaption></figure><a href="/formacion">Ver Formación <b aria-hidden="true">→</b></a></aside>
+            </article>
+            <article id="solutions-panel-coaching" class="solutions-tab-panel" role="tabpanel" aria-labelledby="solutions-tab-coaching" data-solutions-panel="coaching" hidden>
+              <div><span>Desarrollo organizacional</span><h3>CONVERSACIONES QUE MOVILIZAN EL CAMBIO.</h3><p>Acompañamientos para que líderes y equipos ganen claridad, construyan acuerdos y encuentren nuevas formas de avanzar.</p></div>
+              <ul><li>Coaching ejecutivo</li><li>Coaching de equipos</li><li>Cultura de coaching</li></ul>
+              <aside class="solutions-tab-aside"><figure><img src="/assets/img/program-coaching.jpg" alt="Sesión de coaching organizacional"><figcaption>Conversar para avanzar</figcaption></figure><a href="/coaching-organizacional">Ver Coaching <b aria-hidden="true">→</b></a></aside>
+            </article>
+            <article id="solutions-panel-evaluacion" class="solutions-tab-panel" role="tabpanel" aria-labelledby="solutions-tab-evaluacion" data-solutions-panel="evaluacion" hidden>
+              <div><span>Decisiones con información</span><h3>DATOS QUE ABREN MEJORES CONVERSACIONES.</h3><p>Herramientas para comprender comportamientos, motivadores y competencias; siempre conectadas a personas, roles y desarrollo.</p></div>
+              <ul><li>Estilos y motivadores</li><li>Retroalimentación 360°</li><li>Planes de desarrollo</li></ul>
+              <aside class="solutions-tab-aside"><figure><img src="/assets/img/program-evaluacion.jpg" alt="Análisis y evaluación de talento"><figcaption>Decidir con contexto</figcaption></figure><a href="/evaluacion-de-talento">Ver Evaluación <b aria-hidden="true">→</b></a></aside>
+            </article>
+          </div>
+        </div>
+        <div class="solutions-option-grid" aria-label="Opciones de acompañamiento" data-solutions-reveal>
+          <a class="solutions-option-banner" href="/formacion" style="--solutions-banner-image:url('/assets/img/program-formacion.jpg')"><span>Formación</span><h3>BOOTCAMPS Y TALLERES</h3><p>Practicar habilidades que el trabajo necesita hoy.</p><b>Explorar <i aria-hidden="true">→</i></b></a>
+          <a class="solutions-option-banner" href="/formacion" style="--solutions-banner-image:url('/assets/img/formacion-hero-ilustrado.png')"><span>Formación</span><h3>PROGRAMAS DE LIDERAZGO</h3><p>Rutas para liderar conversaciones y decisiones.</p><b>Explorar <i aria-hidden="true">→</i></b></a>
+          <a class="solutions-option-banner" href="/coaching-organizacional" style="--solutions-banner-image:url('/assets/img/program-coaching.jpg')"><span>Coaching</span><h3>COACHING EJECUTIVO</h3><p>Claridad, presencia e influencia para líderes.</p><b>Explorar <i aria-hidden="true">→</i></b></a>
+          <a class="solutions-option-banner" href="/coaching-organizacional" style="--solutions-banner-image:url('/assets/img/coaching-organizacional-hero-v2.png')"><span>Coaching</span><h3>COACHING DE EQUIPOS</h3><p>Acuerdos que sostienen el trabajo colectivo.</p><b>Explorar <i aria-hidden="true">→</i></b></a>
+          <a class="solutions-option-banner" href="/coaching-organizacional" style="--solutions-banner-image:url('/assets/img/service-metodologia.png')"><span>Coaching</span><h3>CULTURA DE COACHING</h3><p>Una práctica de desarrollo que se vuelve cotidiana.</p><b>Explorar <i aria-hidden="true">→</i></b></a>
+          <a class="solutions-option-banner" href="/evaluacion-de-talento" style="--solutions-banner-image:url('/assets/img/program-evaluacion.jpg')"><span>Evaluación</span><h3>EVALUACIÓN 360°</h3><p>Perspectivas para conversar y desarrollar mejor.</p><b>Explorar <i aria-hidden="true">→</i></b></a>
+          <a class="solutions-option-banner" href="/formacion" style="--solutions-banner-image:url('/assets/img/program-mentoria-supervision.png')"><span>Formación continua</span><h3>MENTORÍA Y SUPERVISIÓN</h3><p>Espacios de práctica reflexiva para coaches en desarrollo.</p><b>Explorar <i aria-hidden="true">→</i></b></a>
+          <a class="solutions-option-banner" href="/evaluacion-de-talento" style="--solutions-banner-image:url('/assets/img/program-plan-desarrollo.png')"><span>Evaluación</span><h3>PLANES DE DESARROLLO</h3><p>Información que se transforma en decisiones de crecimiento.</p><b>Explorar <i aria-hidden="true">→</i></b></a>
+          <a class="solutions-option-banner solutions-option-banner--nom" href="/#nom037" style="--solutions-banner-image:url('/assets/img/service-nom037.png')"><span>Bienestar y cumplimiento</span><h3>NOM-037</h3><p>Una ruta de acompañamiento para el trabajo actual.</p><b>Conocer el programa <i aria-hidden="true">→</i></b></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="solutions-evidence" aria-labelledby="solutions-evidence-title">
+      <div class="solutions-wrap">
+        <div class="solutions-evidence-head" data-solutions-reveal>
+          <div class="solutions-evidence-title">
+            <span class="solutions-eyebrow">Evidencia que orienta, no promete</span>
+            <h2 id="solutions-evidence-title">EL DESARROLLO SE VUELVE MÁS ÚTIL CUANDO SE PUEDE MIRAR.</h2>
+          </div>
+          <div>
+            <p>Las organizaciones no mejoran por acumular iniciativas. Mejoran cuando convierten las prioridades en comportamientos, conversaciones y seguimiento. Por eso una solución integral reúne aprendizaje, acompañamiento y una lectura respetuosa del talento.</p>
+            <p>Gallup señala que los managers explican el 70% de la variación del engagement de un equipo. También, su meta-análisis de desarrollo basado en fortalezas reúne 43 estudios, 1.2 millones de empleados y 49,495 unidades de negocio. Estos datos no son una promesa de resultado: son una razón para diseñar intervenciones conectadas y medir lo que importa.</p>
+            <p class="solutions-sources"><a href="https://www.gallup.com/workplace/712895/leaders-improve-employee-engagement-company-culture.aspx" target="_blank" rel="noopener">Ver estudio sobre managers y engagement ↗</a><a href="https://www.gallup.com/cliftonstrengths/en/269615/strengths-meta-analysis-2015.aspx" target="_blank" rel="noopener">Ver meta-análisis de desarrollo basado en fortalezas ↗</a></p>
+          </div>
+        </div>
+        <div class="solutions-data-grid">
+          <figure class="solutions-chart-card" data-solutions-reveal>
+            <figcaption><span>Lectura integral</span><strong>CAPACIDADES QUE CONVERSAN ENTRE SÍ.</strong><p>Una gráfica de conversación para alinear prioridades; no representa una medición de clientes.</p></figcaption>
+            <svg id="solutions-radar" viewBox="-55 -5 470 350" role="img" aria-labelledby="solutions-radar-title solutions-radar-desc">
+              <title id="solutions-radar-title">Radar de capacidades organizacionales conectadas</title><desc id="solutions-radar-desc">Diagrama con liderazgo, colaboración, claridad, desarrollo y desempeño como capacidades que se refuerzan entre sí.</desc>
+              <g class="solutions-radar-grid"><path d="M180 30 325 135 270 300 90 300 35 135Z"/><path d="M180 82 278 153 240 265 120 265 82 153Z"/><path d="M180 135 232 172 211 230 149 230 128 172Z"/><line x1="180" y1="30" x2="180" y2="300"/><line x1="35" y1="135" x2="270" y2="300"/><line x1="325" y1="135" x2="90" y2="300"/><line x1="35" y1="135" x2="325" y2="135"/><line x1="90" y1="300" x2="270" y2="300"/></g>
+              <path class="solutions-radar-area" d="M180 61 279 143 242 254 115 262 84 153Z"/>
+              <g class="solutions-radar-points"><circle cx="180" cy="61" r="5"/><circle cx="279" cy="143" r="5"/><circle cx="242" cy="254" r="5"/><circle cx="115" cy="262" r="5"/><circle cx="84" cy="153" r="5"/></g>
+              <g class="solutions-radar-labels"><text x="180" y="18">Liderazgo</text><text x="334" y="140">Colaboración</text><text x="274" y="321">Claridad</text><text x="22" y="321">Desarrollo</text><text x="0" y="140">Desempeño</text></g>
+            </svg>
+          </figure>
+          <figure class="solutions-chart-card solutions-journey-card" data-solutions-reveal>
+            <figcaption><span>De intención a práctica</span><strong>UN RECORRIDO QUE SE VE EN EL DÍA A DÍA.</strong><p>El dato abre la conversación; la práctica y el seguimiento le dan valor.</p></figcaption>
+            <div class="solutions-journey-visual" aria-label="Cuatro conversaciones que abre una evaluación">
+              <i class="solutions-journey-line" aria-hidden="true"></i>
+              <ol><li><button type="button" data-solutions-journey-step="0" aria-label="Fortalezas que ya están"><span>01</span><b>FORTALEZAS QUE YA ESTÁN</b><p>Qué aporta cada persona cuando está en su mejor forma.</p></button></li><li><button type="button" data-solutions-journey-step="33.333" aria-label="Patrones que conviene mirar"><span>02</span><b>PATRONES QUE CONVIENE MIRAR</b><p>Qué se repite al colaborar, decidir o comunicar.</p></button></li><li><button type="button" data-solutions-journey-step="66.666" aria-label="Energía para el rol"><span>03</span><b>ENERGÍA PARA EL ROL</b><p>Qué condiciones impulsan una contribución sostenible.</p></button></li><li><button type="button" data-solutions-journey-step="100" aria-label="Acuerdos que mueven resultados"><span>04</span><b>ACUERDOS QUE MUEVEN RESULTADOS</b><p>Qué conversación o práctica conviene mover ahora.</p></button></li></ol>
+            </div>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="solutions-cta" data-solutions-reveal aria-labelledby="solutions-cta-title">
+      <i class="solutions-cta-orb" aria-hidden="true"></i>
+      <div class="solutions-wrap">
+        <span class="solutions-eyebrow">Siguiente conversación</span>
+        <h2 id="solutions-cta-title">HAGAMOS ESPACIO PARA EL CAMBIO QUE TU ORGANIZACIÓN NECESITA.</h2>
+        <p>Cuéntanos qué necesita moverse hoy. Diseñaremos una conversación inicial para encontrar un buen punto de partida.</p>
+        <a class="solutions-button solutions-button--light" href="/contacto?service=soluciones-empresas">Agenda una consultoría <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+  </main>
+  <%- include('../partials/site-footer') %>
+  <script src="/solutions-page.js" defer></script>
+</body>
+</html>

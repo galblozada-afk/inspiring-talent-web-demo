@@ -1,0 +1,40 @@
+<%- include('../partials/admin-top', { pageTitle: 'Resumen', active: 'dashboard' }) %>
+<%- include('../partials/admin-topline', { h1: 'Resumen', email: email, flash: flash }) %>
+
+<div class="row">
+  <div class="card">
+    <h2><%= mediaCount %></h2>
+    <p class="hint">Elementos en el fondo del hero</p>
+    <a class="btn ghost small" href="/admin/hero">Editar hero →</a>
+  </div>
+  <div class="card">
+    <h2><%= linkCount %></h2>
+    <p class="hint">Hipervínculos en el topbar</p>
+    <a class="btn ghost small" href="/admin/topbar">Editar topbar →</a>
+  </div>
+  <div class="card">
+    <h2><%= postCount %></h2>
+    <p class="hint">Entradas de blog (borrador + publicadas)</p>
+    <a class="btn ghost small" href="/admin/blog">Ir al blog →</a>
+  </div>
+  <div class="card">
+    <h2><%= contactCount %></h2>
+    <p class="hint">Solicitudes nuevas por atender</p>
+    <a class="btn ghost small" href="/admin/contacts">Ver solicitudes →</a>
+  </div>
+</div>
+
+<div class="card">
+  <h2>Accesos rápidos</h2>
+  <p class="hint">Secciones del sitio que puedes editar desde aquí.</p>
+  <div style="display:flex;flex-wrap:wrap;gap:10px;">
+    <a class="btn ghost" href="/admin/hero">Hero (videos/imágenes)</a>
+    <a class="btn ghost" href="/admin/topbar">Topbar</a>
+    <a class="btn ghost" href="/admin/services">Servicios</a>
+    <a class="btn ghost" href="/admin/nom037">NOM-037</a>
+    <a class="btn ghost" href="/admin/contacts">Solicitudes de contacto</a>
+    <a class="btn ghost" href="/admin/blog">Blog</a>
+  </div>
+</div>
+
+<%- include('../partials/admin-bottom') %>

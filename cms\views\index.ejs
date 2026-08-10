@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="/assets/img/favicon-inspiring.png">
+  <link rel="apple-touch-icon" href="/assets/img/favicon-inspiring.png">
+  <title>InspiringTalent® — Hacer que las cosas sucedan hace la diferencia</title>
+  <meta name="description"
+    content="Consultoría en desarrollo de talento: Formación, Coaching Organizacional y Evaluación de Talento para empresas en México y Estados Unidos.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Inter:wght@400;500;600;700&family=Montserrat:wght@500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="/site.css">
+</head>
+
+<body>
+
+  <div class="topbar"><%- topbarText %><% topbarLinks.forEach(function(l){ %>&nbsp;·&nbsp;<a href="<%= l.url %>" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;"><%= l.label %></a><% }) %></div>
+
+  <header id="siteHeader">
+    <script src="https://kit.fontawesome.com/237c87b42b.js" crossorigin="anonymous"></script>
+    <div class="nav">
+      <a href="#top" class="logo"><img src="/assets/logo-inspiringtalent.png" alt="InspiringTalent"></a>
+      <div class="nav-right">
+        <a href="https://wa.link/77etlj" class="phone-link"><i class="fa-brands fa-whatsapp fa-lg"></i>
+          WhatsApp</a>
+        <a href="/contacto" class="btn btn-primary">Agenda una consultoría</a>
+        <button class="menu-toggle-btn" id="kineticToggle" aria-label="Abrir menú" aria-expanded="false">
+          <span class="mt-text">
+            <p id="mtP1">Menú</p>
+            <p id="mtP2">Cerrar</p>
+          </span>
+          <span class="icon-wrap">
+            <svg id="mtIcon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M7.33333 16L7.33333 0L8.66667 0L8.66667 16L7.33333 16Z" fill="currentColor"></path>
+              <path d="M16 8.66667L0 8.66667L0 7.33333L16 7.33333L16 8.66667Z" fill="currentColor"></path>
+            </svg>
+          </span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= MENÚ KINÉTICO FULL-SCREEN ================= -->
+  <div class="kinetic-overlay" id="kineticOverlay" data-nav="closed">
+    <div class="kinetic-backdrop" id="kineticBackdrop" aria-hidden="true"></div>
+    <nav class="kinetic-menu" id="kineticMenu">
+      <div class="kinetic-menu-bg">
+        <div class="backdrop-layer first"></div>
+        <div class="backdrop-layer second"></div>
+        <div class="backdrop-layer third"></div>
+
+        <div class="ambient-shapes">
+          <svg class="bg-shape bg-shape-1" viewBox="0 0 400 400">
+            <circle class="shape-el" cx="80" cy="120" r="40" fill="rgba(16,185,129,.16)" />
+            <circle class="shape-el" cx="300" cy="80" r="60" fill="rgba(26,54,93,.22)" />
+            <circle class="shape-el" cx="200" cy="300" r="80" fill="rgba(16,185,129,.10)" />
+            <circle class="shape-el" cx="350" cy="280" r="30" fill="rgba(20,232,166,.18)" />
+          </svg>
+          <svg class="bg-shape bg-shape-2" viewBox="0 0 400 400">
+            <path class="shape-el" d="M0 200 Q100 100,200 200 T400 200" stroke="rgba(16,185,129,.22)" stroke-width="50"
+              fill="none" />
+            <path class="shape-el" d="M0 280 Q100 180,200 280 T400 280" stroke="rgba(26,54,93,.24)" stroke-width="34"
+              fill="none" />
+          </svg>
+          <svg class="bg-shape bg-shape-3" viewBox="0 0 400 400">
+            <circle class="shape-el" cx="50" cy="50" r="8" fill="rgba(20,232,166,.42)" />
+            <circle class="shape-el" cx="150" cy="50" r="8" fill="rgba(16,185,129,.4)" />
+            <circle class="shape-el" cx="250" cy="50" r="8" fill="rgba(26,54,93,.4)" />
+            <circle class="shape-el" cx="350" cy="50" r="8" fill="rgba(16,185,129,.4)" />
+            <circle class="shape-el" cx="100" cy="150" r="12" fill="rgba(26,54,93,.35)" />
+            <circle class="shape-el" cx="200" cy="150" r="12" fill="rgba(20,232,166,.35)" />
+            <circle class="shape-el" cx="300" cy="150" r="12" fill="rgba(16,185,129,.35)" />
+            <circle class="shape-el" cx="50" cy="250" r="10" fill="rgba(16,185,129,.4)" />
+            <circle class="shape-el" cx="150" cy="250" r="10" fill="rgba(26,54,93,.4)" />
+            <circle class="shape-el" cx="250" cy="250" r="10" fill="rgba(20,232,166,.42)" />
+            <circle class="shape-el" cx="350" cy="250" r="10" fill="rgba(16,185,129,.4)" />
+          </svg>
+          <svg class="bg-shape bg-shape-4" viewBox="0 0 400 400">
+            <path class="shape-el" d="M100 100 Q150 50,200 100 Q250 150,200 200 Q150 250,100 200 Q50 150,100 100"
+              fill="rgba(16,185,129,.16)" />
+            <path class="shape-el" d="M250 200 Q300 150,350 200 Q400 250,350 300 Q300 350,250 300 Q200 250,250 200"
+              fill="rgba(26,54,93,.2)" />
+          </svg>
+          <svg class="bg-shape bg-shape-5" viewBox="0 0 400 400">
+            <line class="shape-el" x1="0" y1="100" x2="300" y2="400" stroke="rgba(16,185,129,.2)" stroke-width="28" />
+            <line class="shape-el" x1="100" y1="0" x2="400" y2="300" stroke="rgba(26,54,93,.22)" stroke-width="22" />
+            <line class="shape-el" x1="200" y1="0" x2="400" y2="200" stroke="rgba(20,232,166,.22)" stroke-width="18" />
+          </svg>
+          <svg class="bg-shape bg-shape-6" viewBox="0 0 400 400">
+            <circle class="shape-el" cx="200" cy="200" r="60" fill="none" stroke="rgba(16,185,129,.3)"
+              stroke-width="10" />
+            <circle class="shape-el" cx="200" cy="200" r="100" fill="none" stroke="rgba(26,54,93,.26)"
+              stroke-width="8" />
+            <circle class="shape-el" cx="200" cy="200" r="140" fill="none" stroke="rgba(20,232,166,.24)"
+              stroke-width="6" />
+          </svg>
+        </div>
+      </div>
+
+      <div class="kinetic-menu-inner">
+        <ul class="kinetic-list">
+          <li class="kinetic-item" data-shape="1"><a href="#top" class="kinetic-link"><span
+                class="kinetic-link-text">Inicio</span><span class="kinetic-link-bg"></span></a></li>
+          <li class="kinetic-item" data-shape="2"><a href="/coaching-organizacional" class="kinetic-link"><span
+                class="kinetic-link-text">Coaching Organizacional</span><span class="kinetic-link-bg"></span></a></li>
+          <li class="kinetic-item" data-shape="3"><a href="/formacion" class="kinetic-link"><span
+                class="kinetic-link-text">Formación</span><span class="kinetic-link-bg"></span></a></li>
+          <li class="kinetic-item" data-shape="4"><a href="/evaluacion-de-talento" class="kinetic-link"><span
+                class="kinetic-link-text">Evaluación de Talento</span><span class="kinetic-link-bg"></span></a></li>
+          <li class="kinetic-item" data-shape="5"><a href="/soluciones-para-empresas" class="kinetic-link"><span
+                class="kinetic-link-text">Soluciones para Empresas</span><span class="kinetic-link-bg"></span></a></li>
+          <li class="kinetic-item" data-shape="6"><a href="/nosotros" class="kinetic-link"><span
+                class="kinetic-link-text">Nosotros</span><span class="kinetic-link-bg"></span></a></li>
+          <li class="kinetic-item" data-shape="1"><a href="/contacto" class="kinetic-link"><span
+                class="kinetic-link-text">Contacto</span><span class="kinetic-link-bg"></span></a></li>
+          <li class="kinetic-item" data-shape="1"><a href="/blog" class="kinetic-link"><span
+                class="kinetic-link-text">Blog</span><span class="kinetic-link-bg"></span></a></li>
+          <% (extraMenuPages || []).forEach(function(page, index) { %><li class="kinetic-item" data-shape="<%= ((index + 2) % 6) + 1 %>"><a href="/<%= page.slug %>" class="kinetic-link"><span class="kinetic-link-text"><%= page.menu_label || page.title %></span><span class="kinetic-link-bg"></span></a></li><% }); %>
+          <li class="kinetic-academy-item"><a href="https://login.inspiringtalent.mx/" class="kinetic-academy-link" target="_blank" rel="noopener">Academia Virtual <span aria-hidden="true">↗</span></a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  <section class="hero" id="top">
+    <div class="hero-video-bg" id="heroVideoBg">
+      <% if (!heroMedia.length) { %>
+      <video class="is-active" src="/assets/video/hero-1.mp4" autoplay muted loop playsinline preload="auto"></video>
+      <% } %>
+      <% heroMedia.forEach(function(m, i){ %>
+        <% if (m.type === 'video') { %>
+      <video class="<%= i === 0 ? 'is-active' : '' %>" src="<%= m.url %>" <%= i === 0 ? 'autoplay' : '' %> muted loop playsinline preload="auto"></video>
+        <% } else { %>
+      <img class="<%= i === 0 ? 'is-active' : '' %>" src="<%= m.url %>" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:<%= i === 0 ? 1 : 0 %>;">
+        <% } %>
+      <% }) %>
+    </div>
+    <div class="wrap hero-content" data-reveal>
+      <span class="eyebrow"><%= heroText.eyebrow %></span>
+      <h1><%= heroText.headline_prefix %> <span class="cycle-wrap" id="cycleWord"><%= (heroText.cycle_words && heroText.cycle_words[0]) || '' %></span>
+      </h1>
+      <p class="lede"><%= heroText.lede %></p>
+      <div class="hero-ctas">
+        <a href="/contacto" class="btn btn-primary">Agenda una consultoría</a>
+        <a href="#servicios" class="btn btn-ghost">Ver servicios →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CLIENTES ================= -->
+  <section class="clients-strip" id="clientes">
+    <div class="wrap hero-stats-bar">
+      <div class="hero-stats">
+        <div><b>20+</b><span>Años de experiencia</span></div>
+        <div><b>15</b><span>Años en coaching ejecutivo y de equipos</span></div>
+        <div><b>MX · US</b><span>Empresas multinacionales</span></div>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="label">Algunos de nuestros clientes</div>
+      <br>
+    </div>
+    <div class="marquee">
+      <div class="marquee-track" id="marqueeTrack">
+        <span class="client-logo"><img src="/assets/img/logo_Macro.png" alt="Logo Macrotech"></span>
+        <span class="client-logo"><img src="/assets/img/CPM_logo.png" alt="Logo Caja Popular Mexicana"></span>
+        <span class="client-logo"><img src="/assets/img/SEMPRA_logo.png" alt="Logo Sempra"></span>
+        <span class="client-logo"><img src="/assets/img/PXI_logo.png" alt="Logo PXI"></span>
+        <span class="client-logo"><img src="/assets/img/Berrymex_logo.png" alt="Logo Berrymex"></span>
+        <span class="client-logo"><img src="/assets/img/Donaldson_logo.png" alt="Logo Donaldson"></span>
+        <span class="client-logo"><img src="/assets/img/Bunge_logo.png" alt="Logo Bunge"></span>
+        <span class="client-logo"><img src="/assets/img/ASEM_logo.png" alt="Logo ASEM Emprendedores de México"></span>
+        <span class="client-logo"><img src="/assets/img/Chubb_logo.png" alt="Logo Chubb"></span>
+        <span class="client-logo"><img src="/assets/img/Clorox1_logo.png" alt="Logo Clorox"></span>
+        <span class="client-logo"><img src="/assets/img/Continental_logo.png" alt="Logo Continental"></span>
+        <span class="client-logo"><img src="/assets/img/Safran_logo.png" alt="Logo Safran"></span>
+        <span class="client-logo"><img src="/assets/img/Nissan_logo.png" alt="Logo Nissan"></span>
+        <span class="client-logo"><img src="/assets/img/Sunbelle_logo1.png" alt="Logo Sunbelle"></span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section challenges" aria-labelledby="challenges-title">
+    <div class="wrap">
+      <div class="section-head"><span class="eyebrow">Soluciones para el momento que vive tu organización</span><h2 id="challenges-title">Elige el reto que quieres transformar</h2><p>Combinamos aprendizaje, coaching y evaluación para convertir los desafíos de talento en acciones sostenibles.</p></div>
+      <div class="challenge-grid">
+        <a class="challenge-card" href="/coaching-organizacional"><span>01</span><h3>Fortalecer liderazgo</h3><p>Conversaciones, decisiones y equipos capaces de liderar el cambio.</p><b>Coaching organizacional →</b></a>
+        <a class="challenge-card" href="/formacion"><span>02</span><h3>Desarrollar habilidades</h3><p>Programas prácticos que conectan capacidades humanas con el trabajo real.</p><b>Formación →</b></a>
+        <a class="challenge-card" href="/evaluacion-de-talento"><span>03</span><h3>Entender el talento</h3><p>Información que abre mejores conversaciones de desarrollo y desempeño.</p><b>Evaluación de talento →</b></a>
+        <a class="challenge-card challenge-card--accent" href="/soluciones-para-empresas"><span>04</span><h3>Diseñar una ruta integral</h3><p>Una solución a la medida para acompañar el ciclo de talento de tu organización.</p><b>Soluciones para empresas →</b></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PRÓXIMAS EXPERIENCIAS ================= -->
+  <section class="event-spotlight" id="eventos">
+    <div class="wrap">
+      <div class="event-spotlight-head" data-reveal>
+        <div><span class="eyebrow">Agenda Inspiring Talent</span><h2>Lo próximo<br>comienza aquí.</h2></div>
+        <p>Espacios para aprender, conversar y transformar la forma en que los equipos trabajan.</p>
+      </div>
+
+      <% if (events.length) { %>
+        <div class="event-carousel" data-event-carousel role="region" aria-roledescription="carrusel" aria-label="Próximos eventos">
+          <div class="event-carousel-stage" aria-live="off">
+            <% events.forEach(function(event, index) { %>
+              <article class="event-feature event-carousel-slide <%= index === 0 ? 'is-active' : '' %>" data-event-slide aria-hidden="<%= index === 0 ? 'false' : 'true' %>">
+                <div class="event-feature-image" <%= event.image ? 'style="background-image:url(\'' + event.image + '\')"' : '' %>><span class="event-image-wash"></span><div class="event-date-block"><b><%= event.event_date ? new Date(event.event_date + 'T12:00:00').toLocaleDateString('es-MX', { day: '2-digit' }) : 'PRÓX' %></b><span><%= event.event_date ? new Date(event.event_date + 'T12:00:00').toLocaleDateString('es-MX', { month: 'short' }).replace('.', '').toUpperCase() : 'EVENTO' %></span></div></div>
+                <div class="event-feature-content"><span class="event-location"><%= event.location || 'Experiencia Inspiring Talent' %></span><h3><%= event.title %></h3><p><%= event.description %></p><a href="<%= event.cta_href || '/contacto' %>" class="event-cta" tabindex="<%= index === 0 ? '0' : '-1' %>"><%= event.cta_label || 'Conocer más' %> <span aria-hidden="true">→</span></a></div>
+              </article>
+            <% }); %>
+          </div>
+          <% if (events.length > 1) { %>
+            <div class="event-carousel-controls" aria-label="Controles de próximos eventos">
+              <button class="event-carousel-toggle" type="button" aria-label="Pausar rotación" aria-pressed="false"><span aria-hidden="true">Ⅱ</span></button>
+              <button class="event-carousel-prev" type="button" aria-label="Evento anterior"><span aria-hidden="true">←</span></button>
+              <div class="event-carousel-dots" role="tablist" aria-label="Seleccionar evento"><% events.forEach(function(event, index) { %><button type="button" role="tab" class="event-carousel-dot <%= index === 0 ? 'is-active' : '' %>" data-event-index="<%= index %>" aria-label="Ver evento <%= index + 1 %> de <%= events.length %>" aria-selected="<%= index === 0 ? 'true' : 'false' %>"></button><% }); %></div>
+              <button class="event-carousel-next" type="button" aria-label="Siguiente evento"><span aria-hidden="true">→</span></button>
+            </div>
+          <% } %>
+        </div>
+      <% } else { %>
+        <div class="event-empty" data-reveal><span>Muy pronto</span><h3>Nuevas experiencias para liderar, aprender y crecer.</h3><p>Estamos preparando la siguiente agenda de Inspiring Talent. Vuelve pronto o cuéntanos qué necesita hoy tu equipo.</p><a href="/contacto" class="event-cta">Hablemos de tu equipo <span aria-hidden="true">→</span></a></div>
+      <% } %>
+    </div>
+  </section>
+
+  <!-- ================= NOSOTROS ================= -->
+  <section class="section nosotros" id="nosotros">
+    <div class="wrap nosotros-grid">
+      <div data-reveal>
+        <div class="img-frame img-frame--motion"><video class="nosotros-motion" autoplay muted loop playsinline preload="metadata" poster="/assets/img/service-nosotros.png" aria-label="Motion graphic de Inspiring Talent"><source src="/assets/video/motion-nosotros.mp4" type="video/mp4"></video></div>
+      </div>
+      <div data-reveal>
+        <span class="eyebrow" style="color:var(--navy-800)">Nosotros</span>
+        <h2 style="font-size:clamp(26px,3vw,36px);color:var(--navy-950);margin:14px 0 18px;">Un equipo con experiencia
+          comprobada en comportamiento humano</h2>
+        <p class="body-text" style="margin-top:0;">Ofrecemos soluciones a las necesidades de las empresas en el
+          desarrollo del talento de su capital humano. Nuestro compromiso es apoyar a personas y empresas en el logro de
+          la eficiencia y productividad por medio del aprendizaje, promoviendo una mayor conciencia en las habilidades
+          personales y profesionales para el bien propio y progreso de todos.</p>
+        <p class="body-text">Somos una empresa que ofrece servicios de consultoría en desarrollo de talento dentro de
+          las organizaciones, con más de 20 años de experiencia y 15 años en Coaching organizacional, ejecutivo y de
+          equipos en empresas multinacionales en México y Estados Unidos.</p>
+        <div class="values">
+          <span class="value-chip value-chip--animated">Aprendizaje</span>
+          <span class="value-chip value-chip--animated">Creatividad</span>
+          <span class="value-chip value-chip--animated">Compromiso</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= POR QUÉ ELEGIRNOS ================= -->
+  <section class="section tight why-choose">
+    <div class="wrap why-grid">
+      <div data-reveal>
+        <span class="eyebrow" style="color:var(--navy-800)">¿Por qué elegirnos?</span>
+        <h2 style="font-size:clamp(26px,3vw,36px);color:var(--navy-950);margin:14px 0 24px;">Resultados medibles,
+          acompañamiento cercano</h2>
+        <div class="why-list">
+          <div class="why-item">
+            <b>01</b>
+            <div>
+              <h4>20+ años de trayectoria</h4>
+              <p>Consultoría en desarrollo de talento en empresas multinacionales de México y Estados Unidos.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <b>02</b>
+            <div>
+              <h4>Metodología propia</h4>
+              <p>Un proceso de 5 etapas que conecta la estrategia con la implementación práctica y el seguimiento.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <b>03</b>
+            <div>
+              <h4>Herramientas certificadas</h4>
+              <p>DISC, TriMetrix EQ, Talent Alignment y AXES-360 para decisiones basadas en datos.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <b>04</b>
+            <div>
+              <h4>Planes a la medida</h4>
+              <p>Diseñamos cada programa según los objetivos reales de tu organización, no una plantilla genérica.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-reveal>
+        <div class="img-frame tall"><img class="why-airam-image" src="/assets/img/why-us-airam.png" alt="Airam Sánchez Santos, fundadora de Inspiring Talent"
+            loading="lazy"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CITA / PUENTE ================= -->
+  <section class="quote-bridge" aria-label="Una reflexión sobre el cambio">
+    <div class="wrap">
+      <figure class="quote-bridge-inner" data-reveal>
+        <blockquote>“Cuando cambiamos la forma de mirar las cosas,<br>las cosas que miramos cambian”.</blockquote>
+        <figcaption>— Wayne Dyer</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ================= METODOLOGÍA ================= -->
+  <section class="section metodologia" id="metodologia">
+    <div class="wrap">
+      <div class="metodologia-head">
+        <div class="section-head" data-reveal style="margin-bottom:0;">
+          <span class="eyebrow">Cómo trabajamos</span>
+          <h2>Nuestra metodología</h2>
+          <p>Un proceso de cinco etapas que conecta la estrategia de liderazgo con resultados medibles en el día a día
+            de tu organización.</p>
+        </div>
+        <div class="img-frame" data-reveal><img src="/assets/img/service-metodologia.png"
+            alt="Sesión de formación grupal" loading="lazy"></div>
+      </div>
+      <div class="how-wrap" data-reveal>
+        <svg class="how-path" viewBox="0 0 1000 1130" preserveAspectRatio="none" aria-hidden="true">
+          <path
+            d="M 290 150 C 500 150, 550 270, 710 270 C 850 270, 500 350, 290 450 C 290 600, 550 720, 750 720 C 950 720, 500 800, 290 850" />
+        </svg>
+
+        <div class="how-step how-step-1 theme-navy">
+          <div class="how-card">
+            <svg class="how-pin" viewBox="0 0 24 24" fill="currentColor">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path
+                d="M16 3a1 1 0 0 1 .117 1.993l-.117 .007v4.764l1.894 3.789a1 1 0 0 1 .1 .331l.006 .116v2a1 1 0 0 1 -.883 .993l-.117 .007h-4v4a1 1 0 0 1 -1.993 .117l-.007 -.117v-4h-4a1 1 0 0 1 -.993 -.883l-.007 -.117v-2a1 1 0 0 1 .06 -.34l.046 -.107l1.894 -3.791v-4.762a1 1 0 0 1 -.117 -1.993l.117 -.007h8z" />
+            </svg>
+            <div class="how-inner">
+              <span class="how-num">01</span>
+              <h4>Indagación para la generación de estrategia de liderazgo</h4>
+              <p>Escuchamos a tu organización para diseñar una estrategia de liderazgo alineada a tus objetivos de
+                negocio.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="how-step how-step-2 theme-mint">
+          <div class="how-card">
+            <svg class="how-pin" viewBox="0 0 24 24" fill="currentColor">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path
+                d="M16 3a1 1 0 0 1 .117 1.993l-.117 .007v4.764l1.894 3.789a1 1 0 0 1 .1 .331l.006 .116v2a1 1 0 0 1 -.883 .993l-.117 .007h-4v4a1 1 0 0 1 -1.993 .117l-.007 -.117v-4h-4a1 1 0 0 1 -.993 -.883l-.007 -.117v-2a1 1 0 0 1 .06 -.34l.046 -.107l1.894 -3.791v-4.762a1 1 0 0 1 -.117 -1.993l.117 -.007h8z" />
+            </svg>
+            <div class="how-inner">
+              <span class="how-num">02</span>
+              <h4>Evaluación de competencias y comportamientos</h4>
+              <p>Medimos el punto de partida con herramientas de evaluación de talento confiables y accionables.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="how-step how-step-3 theme-chartreuse">
+          <div class="how-card">
+            <svg class="how-pin" viewBox="0 0 24 24" fill="currentColor">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path
+                d="M16 3a1 1 0 0 1 .117 1.993l-.117 .007v4.764l1.894 3.789a1 1 0 0 1 .1 .331l.006 .116v2a1 1 0 0 1 -.883 .993l-.117 .007h-4v4a1 1 0 0 1 -1.993 .117l-.007 -.117v-4h-4a1 1 0 0 1 -.993 -.883l-.007 -.117v-2a1 1 0 0 1 .06 -.34l.046 -.107l1.894 -3.791v-4.762a1 1 0 0 1 -.117 -1.993l.117 -.007h8z" />
+            </svg>
+            <div class="how-inner">
+              <span class="how-num">03</span>
+              <h4>Acompañamiento para el desarrollo de competencias suaves</h4>
+              <p>Coaching organizacional y formación práctica para fortalecer habilidades clave del equipo.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="how-step how-step-4 theme-navy">
+          <div class="how-card">
+            <svg class="how-pin" viewBox="0 0 24 24" fill="currentColor">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path
+                d="M16 3a1 1 0 0 1 .117 1.993l-.117 .007v4.764l1.894 3.789a1 1 0 0 1 .1 .331l.006 .116v2a1 1 0 0 1 -.883 .993l-.117 .007h-4v4a1 1 0 0 1 -1.993 .117l-.007 -.117v-4h-4a1 1 0 0 1 -.993 -.883l-.007 -.117v-2a1 1 0 0 1 .06 -.34l.046 -.107l1.894 -3.791v-4.762a1 1 0 0 1 -.117 -1.993l.117 -.007h8z" />
+            </svg>
+            <div class="how-inner">
+              <span class="how-num">04</span>
+              <h4>Implementación práctica en el ámbito de trabajo</h4>
+              <p>Llevamos lo aprendido al día a día, con herramientas y hábitos que se sostienen en el tiempo.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="how-step how-step-5 theme-mint">
+          <div class="how-card">
+            <svg class="how-pin" viewBox="0 0 24 24" fill="currentColor">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path
+                d="M16 3a1 1 0 0 1 .117 1.993l-.117 .007v4.764l1.894 3.789a1 1 0 0 1 .1 .331l.006 .116v2a1 1 0 0 1 -.883 .993l-.117 .007h-4v4a1 1 0 0 1 -1.993 .117l-.007 -.117v-4h-4a1 1 0 0 1 -.993 -.883l-.007 -.117v-2a1 1 0 0 1 .06 -.34l.046 -.107l1.894 -3.791v-4.762a1 1 0 0 1 -.117 -1.993l.117 -.007h8z" />
+            </svg>
+            <div class="how-inner">
+              <span class="how-num">05</span>
+              <h4>Seguimiento</h4>
+              <p>Damos continuidad y medimos resultados para asegurar que el cambio se mantenga y crezca.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SERVICIOS ================= -->
+  <section class="section servicios on-dark" id="servicios">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <span class="eyebrow">Un equipo, tres formas de llegar al mismo lugar</span>
+        <h2>Servicios para tu empresa</h2>
+        <p>Formación, Coaching Organizacional y Evaluación de Talento: tres áreas que se combinan según las necesidades
+          reales de tu organización.</p>
+      </div>
+
+      <div class="svc-tabs" data-reveal role="tablist" aria-label="Servicios para tu empresa">
+        <% servicesTabsOrdered.forEach(function(t, i){ %>
+        <button type="button" class="svc-tab <%= i === 0 ? 'active' : '' %>" data-tab="<%= t.tab_key %>" id="tab-<%= t.tab_key %>" role="tab" aria-selected="<%= i === 0 ? 'true' : 'false' %>" aria-controls="panel-<%= t.tab_key %>"><b><%= t.number_label %></b><%= t.tab_label %></button>
+        <% }) %>
+      </div>
+
+      <% servicesTabsOrdered.forEach(function(t, i){ %>
+      <div class="svc-panel svc-panel--animated <%= i === 0 ? 'active' : '' %>" id="panel-<%= t.tab_key %>" role="tabpanel" aria-labelledby="tab-<%= t.tab_key %>" aria-hidden="<%= i === 0 ? 'false' : 'true' %>" data-reveal>
+        <div>
+          <h3><%= t.heading %></h3>
+          <p class="desc"><%= t.description %></p>
+          <%- t.body_html %>
+        </div>
+        <% if (t.tab_key === 'formacion') { %>
+        <div class="svc-media">
+          <div class="img-frame"><img src="<%= t.media_image %>" alt="<%= t.tab_label %>" loading="lazy"></div>
+          <% if (t.media_badge_image) { %>
+          <div class="svc-media-badge"><img src="<%= t.media_badge_image %>" alt="Entrega de certificación"></div>
+          <% } %>
+        </div>
+        <% } else { %>
+        <div class="img-frame"><img src="<%= t.media_image %>" alt="<%= t.tab_label %>" loading="lazy"></div>
+        <% } %>
+      </div>
+      <% }) %>
+    </div>
+  </section>
+
+  <!-- ================= STATS ================= -->
+  <section class="stats-band">
+    <div class="bg-img" style="background-image:url('/assets/img/service-stats-bg.png');"></div>
+    <div class="wrap stats-grid" data-reveal>
+      <div class="stat"><b class="stat-number" data-count-to="20" data-suffix="+">20+</b><span>años de experiencia en consultoría de desarrollo de talento</span></div>
+      <div class="stat"><b class="stat-number" data-count-to="15">15</b><span>años en coaching organizacional, ejecutivo y de equipos</span></div>
+      <div class="stat"><b class="stat-number" data-count-to="11" data-suffix="+">11+</b><span>marcas que han confiado en nosotros, de distintos sectores</span></div>
+      <div class="stat"><b class="stat-lettermark" aria-label="México y Estados Unidos"><span>M</span><span>X</span><i>·</i><span>U</span><span>S</span></b><span>presencia en empresas multinacionales</span></div>
+    </div>
+  </section>
+
+  <!-- ================= TESTIMONIOS ================= -->
+  <section class="section testimonials" id="testimonios">
+    <div class="wrap">
+      <div class="section-head" data-reveal style="margin:0 auto 56px;text-align:center;">
+        <span class="eyebrow" style="color:var(--navy-800)">Lo que dicen de nosotros</span>
+        <h2>Historias de crecimiento real</h2>
+        <p style="margin-left:auto;margin-right:auto;">Coaches, directores y consultores que se certificaron o
+          transformaron a sus equipos con Inspiring Talent.</p>
+      </div>
+
+      <div class="tcarousel" data-reveal>
+        <div class="tcarousel-images" id="tImages">
+          <img src="/assets/img/testimonials/rita-maria-culebro-hq.png" alt="Rita María Culebro Gómez" class="tc-img" data-i="0">
+          <img src="/assets/img/testimonials/andrea-mercedes-duperon-hq.png" alt="Andrea Mercedes Duperón Cruz" class="tc-img" data-i="1">
+          <img src="/assets/img/testimonials/delia-trapero-turrent-hq.png" alt="Delia Trapero Turrent" class="tc-img" data-i="2">
+          <img src="/assets/img/testimonials/jorge-ignacio-rivera-hq.png" alt="Jorge Ignacio Rivera Cortes" class="tc-img" data-i="3">
+        </div>
+
+        <div class="tcarousel-content">
+          <div id="tContent">
+            <h3 class="tc-name">Rita María Culebro Gómez</h3>
+            <p class="tc-role">Directora General en POINT Potencializando Talentos</p>
+            <p class="tc-quote">Viví un proceso profundo de autoconocimiento que impactó positivamente mi vida personal
+              y profesional. Ahora puedo ayudar a mis clientes a descubrir sus fortalezas y alcanzar sus metas. Si
+              tuviera que resumir mi experiencia en una palabra, sería: crecimiento.</p>
+          </div>
+          <div class="tc-arrows">
+            <button class="tc-arrow" id="tPrev" aria-label="Testimonio anterior">←</button>
+            <button class="tc-arrow" id="tNext" aria-label="Siguiente testimonio">→</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= NOM-037 ================= -->
+  <% if (nom037.is_visible !== false) { %><section class="section nom" id="nom037">
+
+    <div class="wrap">
+      <div class="nom-card" data-reveal>
+        <div class="nom-copy">
+          <span class="eyebrow"><%= nom037.eyebrow %></span>
+          <h2><%= nom037.heading %></h2>
+          <p><%= nom037.paragraph1 %></p>
+          <p><%= nom037.paragraph2 %></p>
+          <a href="<%= nom037.cta_href %>" class="btn btn-primary" style="margin-top:10px;"><%= nom037.cta_label %></a>
+        </div>
+        <div class="nom-visual">
+          <img src="<%= nom037.image %>" alt="Videollamada de equipo en modalidad de teletrabajo">
+        </div>
+      </div>
+    </div>
+  </section><% } %>
+
+  <!-- ================= CTA FINAL ================= -->
+  <section class="cta-final" id="contacto">
+    <div class="bg-img" style="background-image:url('/assets/img/cta-welcome.png');"></div>
+    <div class="corner-mark tl"></div>
+    <div class="wrap" data-reveal>
+      <span class="eyebrow" style="color:var(--mint);">¡Conócenos!</span>
+      <h2 style="margin-top:18px;">Te apoyamos a diseñar un plan con base en las necesidades de tu organización.</h2>
+      <p>Formación, Coaching Organizacional y Evaluación de Talento, diseñados para el momento que vive tu equipo.</p>
+      <div class="hero-ctas">
+        <a href="/contacto" class="btn btn-primary">Agenda una consultoría</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <%- include('partials/site-footer') %>
+  <footer class="site-footer" hidden>
+    <div class="wrap">
+      <div class="foot-grid">
+        <div>
+          <a href="#top" class="logo" style="margin-bottom:18px;display:inline-flex;"><img
+              src="/assets/img/footer-logo.svg" alt="InspiringTalent" style="height:120px;width:auto;"></a>
+          <p style="font-size:13.5px;line-height:1.6;color:rgba(255,255,255,.5);max-width:280px;">Consultoría en
+            desarrollo de talento: apoyamos a personas y empresas a lograr eficiencia y productividad por medio del
+            aprendizaje.</p>
+          <div class="foot-social">
+            <a href="https://www.linkedin.com/organization/22319247/admin/" target="_blank" rel="noopener"
+              aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z" />
+              </svg>
+            </a>
+            <a href="https://www.facebook.com/inspiringtalent/" target="_blank" rel="noopener" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z" />
+              </svg>
+            </a>
+            <a href="https://www.instagram.com/inspiringtalentmx/" target="_blank" rel="noopener"
+              aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2c2.72 0 3.06.01 4.12.06 1.06.05 1.79.22 2.43.47.66.26 1.21.6 1.76 1.15.55.55.9 1.1 1.15 1.76.25.64.42 1.37.47 2.43.05 1.06.06 1.4.06 4.12s-.01 3.06-.06 4.12c-.05 1.06-.22 1.79-.47 2.43a4.9 4.9 0 0 1-1.15 1.76 4.9 4.9 0 0 1-1.76 1.15c-.64.25-1.37.42-2.43.47-1.06.05-1.4.06-4.12.06s-3.06-.01-4.12-.06c-1.06-.05-1.79-.22-2.43-.47a4.9 4.9 0 0 1-1.76-1.15 4.9 4.9 0 0 1-1.15-1.76c-.25-.64-.42-1.37-.47-2.43C2.01 15.06 2 14.72 2 12s.01-3.06.06-4.12c.05-1.06.22-1.79.47-2.43.26-.66.6-1.21 1.15-1.76A4.9 4.9 0 0 1 5.44.53c.64-.25 1.37-.42 2.43-.47C8.93.01 9.27 0 12 0m0 5.84a6.16 6.16 0 1 0 0 12.32 6.16 6.16 0 0 0 0-12.32M12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8m6.4-11.85a1.44 1.44 0 1 1-2.88 0 1.44 1.44 0 0 1 2.88 0" />
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h5>Servicios</h5>
+          <a href="#servicios">Formación</a>
+          <a href="#servicios">Coaching Organizacional</a>
+          <a href="#servicios">Evaluación de Talento</a>
+          <a href="#nom037">Programa NOM-037</a>
+        </div>
+        <div>
+          <h5>Empresa</h5>
+          <a href="#nosotros">Nosotros</a>
+          <a href="#metodologia">Metodología</a>
+          <a href="#clientes">Clientes</a>
+          <a href="/blog">Blog</a>
+        </div>
+        <div>
+          <h5>Contacto</h5>
+          <a href="https://wa.link/77etlj" class="phone-link"><i class="fa-brands fa-whatsapp fa-lg"></i>
+            WhatsApp</a>
+          <a href="https://www.inspiringtalent.mx" target="_blank" rel="noopener">inspiringtalent.mx</a>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span>INSPIRING TALENT 2021. ALL RIGHTS RESERVED</span>
+        <span>Hacer que las cosas sucedan hace la diferencia.</span>
+        <a href="/admin/login" aria-label="Acceso administrador" title="Acceso administrador"
+          style="margin-left:auto;opacity:.35;transition:opacity .2s;display:inline-flex;align-items:center;"
+          onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.35">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <path d="M16.555 3.843l3.602 3.602a2.877 2.877 0 0 1 0 4.069l-2.643 2.643a2.877 2.877 0 0 1 -4.069 0l-.301 -.301l-6.558 6.558a2 2 0 0 1 -1.239 .578l-.175 .008h-1.172a1 1 0 0 1 -.993 -.883l-.007 -.117v-1.172a2 2 0 0 1 .467 -1.284l.119 -.13l.414 -.414h2v-2h2v-2l2.144 -2.144l-.301 -.301a2.877 2.877 0 0 1 0 -4.069l2.643 -2.643a2.877 2.877 0 0 1 4.069 0z"/>
+            <path d="M15 9h.01"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/CustomEase.min.js"></script>
+  <script>
+
+    // header shadow on scroll
+    const header = document.getElementById('siteHeader');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 8);
+    });
+
+    // reveal on scroll
+    const revealEls = document.querySelectorAll('[data-reveal]');
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } });
+      }, { threshold: .15 });
+      revealEls.forEach(el => io.observe(el));
+    } else {
+      revealEls.forEach(el => el.classList.add('is-in'));
+    }
+
+    // section titles: reveal word by word as visitors reach each section
+    const scrollTitles = document.querySelectorAll('.section-head h2');
+    const reduceTitleMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function prepareScrollTitle(title) {
+      const words = title.textContent.trim().split(/\s+/);
+      title.textContent = '';
+      words.forEach((word, index) => {
+        const wordEl = document.createElement('span');
+        wordEl.className = 'scroll-title-word';
+        wordEl.style.setProperty('--title-delay', `${index * 38}ms`);
+        wordEl.textContent = word;
+        title.appendChild(wordEl);
+        if (index < words.length - 1) title.appendChild(document.createTextNode(' '));
+      });
+      title.classList.add('scroll-title');
+    }
+    scrollTitles.forEach(prepareScrollTitle);
+    if (reduceTitleMotion || !('IntersectionObserver' in window)) {
+      scrollTitles.forEach(title => title.classList.add('is-title-in'));
+    } else {
+      const titleObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-title-in');
+            titleObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: .28, rootMargin: '0px 0px -6%' });
+      scrollTitles.forEach(title => titleObserver.observe(title));
+    }
+
+    // hero word cycle
+    const words = <%- JSON.stringify(heroText.cycle_words && heroText.cycle_words.length ? heroText.cycle_words : ['']) %>;
+    let wi = 0;
+    const cycleEl = document.getElementById('cycleWord');
+    if (cycleEl && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      setInterval(() => {
+        wi = (wi + 1) % words.length;
+        cycleEl.style.opacity = 0;
+        setTimeout(() => { cycleEl.textContent = words[wi]; cycleEl.style.opacity = 1; }, 220);
+      }, 2600);
+      cycleEl.style.transition = 'opacity .22s ease';
+    }
+
+    // hero: rotación de los 3 videos de fondo con crossfade
+    (function () {
+      const host = document.getElementById('heroVideoBg');
+      if (!host) return;
+      const vids = Array.from(host.querySelectorAll('video'));
+      if (vids.length < 2) return;
+      let idx = 0;
+      const HOLD_MS = 8000; // tiempo que se muestra cada video antes de cruzar al siguiente
+
+      vids[0].play().catch(() => { });
+
+      function next() {
+        const current = vids[idx];
+        idx = (idx + 1) % vids.length;
+        const upcoming = vids[idx];
+        upcoming.currentTime = 0;
+        upcoming.play().catch(() => { });
+        upcoming.classList.add('is-active');
+        current.classList.remove('is-active');
+        setTimeout(() => { try { current.pause(); } catch (e) { } }, 1200);
+      }
+      setInterval(next, HOLD_MS);
+    })();
+
+    // agenda: carrusel de eventos publicado desde el panel de administración
+    (function () {
+      const eventCarousel = document.querySelector('[data-event-carousel]');
+      if (!eventCarousel) return;
+
+      const slides = Array.from(eventCarousel.querySelectorAll('[data-event-slide]'));
+      if (slides.length < 2) return;
+
+      const dots = Array.from(eventCarousel.querySelectorAll('[data-event-index]'));
+      const previous = eventCarousel.querySelector('.event-carousel-prev');
+      const next = eventCarousel.querySelector('.event-carousel-next');
+      const toggle = eventCarousel.querySelector('.event-carousel-toggle');
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      let activeIndex = 0;
+      let userPaused = false;
+      let eventCarouselTimer = null;
+
+      function showEvent(index) {
+        activeIndex = (index + slides.length) % slides.length;
+        slides.forEach((slide, slideIndex) => {
+          const isActive = slideIndex === activeIndex;
+          slide.classList.toggle('is-active', isActive);
+          slide.setAttribute('aria-hidden', String(!isActive));
+          slide.querySelectorAll('a').forEach(link => link.tabIndex = isActive ? 0 : -1);
+        });
+        dots.forEach((dot, dotIndex) => {
+          const isActive = dotIndex === activeIndex;
+          dot.classList.toggle('is-active', isActive);
+          dot.setAttribute('aria-selected', String(isActive));
+        });
+      }
+
+      function stopEventAutoplay() {
+        if (eventCarouselTimer) clearInterval(eventCarouselTimer);
+        eventCarouselTimer = null;
+      }
+
+      function startEventAutoplay() {
+        stopEventAutoplay();
+        if (reduceMotion || userPaused) return;
+        eventCarouselTimer = setInterval(() => showEvent(activeIndex + 1), 5000);
+      }
+
+      function selectEvent(index) {
+        userPaused = true;
+        stopEventAutoplay();
+        showEvent(index);
+        toggle.setAttribute('aria-pressed', 'true');
+        toggle.setAttribute('aria-label', 'Reanudar rotación');
+        toggle.querySelector('span').textContent = '▶';
+      }
+
+      previous.addEventListener('click', () => selectEvent(activeIndex - 1));
+      next.addEventListener('click', () => selectEvent(activeIndex + 1));
+      dots.forEach(dot => dot.addEventListener('click', () => selectEvent(Number(dot.dataset.eventIndex))));
+      toggle.addEventListener('click', () => {
+        userPaused = !userPaused;
+        if (userPaused) {
+          stopEventAutoplay();
+          toggle.setAttribute('aria-pressed', 'true');
+          toggle.setAttribute('aria-label', 'Reanudar rotación');
+          toggle.querySelector('span').textContent = '▶';
+        } else {
+          toggle.setAttribute('aria-pressed', 'false');
+          toggle.setAttribute('aria-label', 'Pausar rotación');
+          toggle.querySelector('span').textContent = 'Ⅱ';
+          startEventAutoplay();
+        }
+      });
+
+      eventCarousel.addEventListener('mouseenter', stopEventAutoplay);
+      eventCarousel.addEventListener('mouseleave', startEventAutoplay);
+      eventCarousel.addEventListener('focusin', stopEventAutoplay);
+      eventCarousel.addEventListener('focusout', event => {
+        if (!eventCarousel.contains(event.relatedTarget)) startEventAutoplay();
+      });
+
+      showEvent(0);
+      startEventAutoplay();
+    })();
+
+    // service tabs
+    const tabs = document.querySelectorAll('.svc-tab');
+    const panels = document.querySelectorAll('.svc-panel');
+    function activateServiceTab(name) {
+      tabs.forEach(t => {
+        const isActive = t.dataset.tab === name;
+        t.classList.toggle('active', isActive);
+        t.setAttribute('aria-selected', String(isActive));
+      });
+      panels.forEach(p => {
+        const isActive = p.id === 'panel-' + name;
+        p.classList.toggle('active', isActive);
+        p.setAttribute('aria-hidden', String(!isActive));
+      });
+    }
+    tabs.forEach(tab => tab.addEventListener('click', () => activateServiceTab(tab.dataset.tab)));
+
+    // experience metrics: count once when the band enters the viewport
+    const statsGrid = document.querySelector('.stats-grid');
+    function animateStats() {
+      if (!statsGrid || statsGrid.dataset.counted === 'true') return;
+      statsGrid.dataset.counted = 'true';
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const duration = 1150;
+      statsGrid.querySelectorAll('.stat-number').forEach(numberEl => {
+        const target = Number(numberEl.dataset.countTo || 0);
+        const suffix = numberEl.dataset.suffix || '';
+        if (reduceMotion) {
+          numberEl.textContent = target + suffix;
+          return;
+        }
+        numberEl.textContent = '0' + suffix;
+        const start = performance.now();
+        function count(now) {
+          const progress = Math.min((now - start) / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          numberEl.textContent = Math.round(target * eased) + suffix;
+          if (progress < 1) requestAnimationFrame(count);
+        }
+        requestAnimationFrame(count);
+      });
+      statsGrid.querySelectorAll('.stat').forEach(stat => stat.classList.add('is-counted'));
+    }
+    if (statsGrid) {
+      if ('IntersectionObserver' in window) {
+        const statsObserver = new IntersectionObserver(entries => {
+          if (entries[0].isIntersecting) { animateStats(); statsObserver.disconnect(); }
+        }, { threshold: .35 });
+        statsObserver.observe(statsGrid);
+      } else {
+        animateStats();
+      }
+    }
+
+    // evaluation tools: supplied marks on the front, descriptions on a tap-friendly flip side
+    const toolLogos = {
+      'DISC': '/assets/img/assessment-tools/disc.png',
+      'INTELIGENCIA EMOCIONAL': '/assets/img/assessment-tools/eq.png',
+      'TALENT ALIGNMENT': '/assets/img/assessment-tools/talent-alignment.png',
+      'AXES 360': '/assets/img/assessment-tools/axes-360.png'
+    };
+    const evaluationToolCards = document.querySelectorAll('.tool-card');
+    function setToolCardState(card, isFlipped) {
+      card.classList.toggle('is-flipped', isFlipped);
+      card.setAttribute('aria-expanded', String(isFlipped));
+    }
+    evaluationToolCards.forEach(card => {
+      const heading = card.querySelector('h5');
+      const description = card.querySelector('p');
+      const title = heading && heading.textContent.trim();
+      const logo = toolLogos[title.toUpperCase()];
+      if (!heading || !description || !logo) return;
+
+      const inner = document.createElement('div');
+      inner.className = 'tool-card-inner';
+      const front = document.createElement('div');
+      front.className = 'tool-card-face tool-card-face--front';
+      const logoImg = document.createElement('img');
+      logoImg.className = 'tool-card-logo';
+      logoImg.classList.add(`tool-card-logo--${title.toLowerCase().replace(/\s+/g, '-')}`);
+      logoImg.src = logo;
+      logoImg.alt = '';
+      const hint = document.createElement('span');
+      hint.className = 'tool-card-hint';
+      hint.textContent = 'Toca para conocer';
+      front.append(logoImg, heading, hint);
+
+      const back = document.createElement('div');
+      back.className = 'tool-card-face tool-card-face--back';
+      const backLabel = document.createElement('span');
+      backLabel.className = 'tool-card-back-label';
+      backLabel.textContent = title;
+      const returnHint = document.createElement('span');
+      returnHint.className = 'tool-card-hint';
+      returnHint.textContent = 'Toca para volver';
+      back.append(backLabel, description, returnHint);
+      inner.append(front, back);
+      card.replaceChildren(inner);
+      card.classList.add('is-interactive');
+      card.setAttribute('role', 'button');
+      card.setAttribute('tabindex', '0');
+      card.setAttribute('aria-label', `Conocer ${title}`);
+      card.setAttribute('aria-expanded', 'false');
+      const toggle = () => {
+        const willFlip = !card.classList.contains('is-flipped');
+        evaluationToolCards.forEach(otherCard => { if (otherCard !== card) setToolCardState(otherCard, false); });
+        setToolCardState(card, willFlip);
+      };
+      card.addEventListener('click', toggle);
+      card.addEventListener('keydown', event => {
+        if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); toggle(); }
+      });
+    });
+
+    // duplicate marquee track for seamless loop
+    const track = document.getElementById('marqueeTrack');
+    track.innerHTML += track.innerHTML;
+
+    /* ============================================================
+       TESTIMONIOS — carrusel circular, traducido de React+framer-motion
+       a JS vanilla (referencia: circular-testimonials)
+       ============================================================ */
+    (function () {
+      const data = [
+        {
+          name: 'Rita María Culebro Gómez',
+          role: 'Directora General en POINT Potencializando Talentos',
+          quote: 'Viví un proceso profundo de autoconocimiento que impactó positivamente mi vida personal y profesional. Ahora puedo ayudar a mis clientes a descubrir sus fortalezas y alcanzar sus metas. Si tuviera que resumir mi experiencia en una palabra, sería: crecimiento.'
+        },
+        {
+          name: 'Andrea Mercedes Duperón Cruz',
+          role: 'Impulso Humano Empresarial SCP',
+          quote: 'Elegí la Certificación Internacional en Coaching Organizacional por su calidad académica y su prestigio a lo largo de los años. Fortaleció mi aprendizaje y mis competencias como coach. La recomiendo a directores de RRHH, directores generales y coaches.'
+        },
+        {
+          name: 'Delia Trapero Turrent',
+          role: 'Consultora independiente · México',
+          quote: 'Logré certificarme como ACC gracias al acompañamiento y la mentoría constante del staff de Inspiring Talent. Es un programa pragmático, con exposición a coaches internacionales y una práctica constante que realmente hace la diferencia.'
+        },
+        {
+          name: 'Jorge Ignacio Rivera Cortes',
+          role: 'Agile Coach in Digital and Cultural Transformation',
+          quote: 'Lo que comenzó como una certificación para adquirir habilidades se transformó en un recorrido de crecimiento personal y profesional. Hoy sé crear acuerdos con éxito y convertir a mis clientes en protagonistas del cambio.'
+        }
+      ];
+
+      const imgs = Array.from(document.querySelectorAll('#tImages .tc-img'));
+      const contentHost = document.getElementById('tContent');
+      const prevBtn = document.getElementById('tPrev');
+      const nextBtn = document.getElementById('tNext');
+      if (!imgs.length || !contentHost) return;
+
+      const len = data.length;
+      let active = 0;
+      let autoplayTimer = null;
+
+      function layoutImages() {
+        imgs.forEach((img, i) => {
+          const isActive = i === active;
+          const isLeft = (active - 1 + len) % len === i;
+          const isRight = (active + 1) % len === i;
+          if (isActive) {
+            img.style.zIndex = 3; img.style.opacity = 1; img.style.pointerEvents = 'auto';
+            img.style.transform = 'translateX(0) translateY(0) scale(1) rotateY(0deg)';
+            img.style.filter = 'grayscale(0)';
+          } else if (isLeft) {
+            img.style.zIndex = 2; img.style.opacity = 1; img.style.pointerEvents = 'auto';
+            img.style.transform = 'translateX(-72px) translateY(-16px) scale(.8) rotateY(18deg)';
+            img.style.filter = 'grayscale(1)';
+          } else if (isRight) {
+            img.style.zIndex = 2; img.style.opacity = 1; img.style.pointerEvents = 'auto';
+            img.style.transform = 'translateX(72px) translateY(-16px) scale(.8) rotateY(-18deg)';
+            img.style.filter = 'grayscale(1)';
+          } else {
+            img.style.zIndex = 1; img.style.opacity = 0; img.style.pointerEvents = 'none';
+            img.style.transform = 'translateX(0) translateY(0) scale(.6) rotateY(0deg)';
+            img.style.filter = 'grayscale(1)';
+          }
+          img.style.transition = 'transform .8s cubic-bezier(.4,2,.3,1), opacity .5s, filter .4s';
+        });
+      }
+
+      function renderContent() {
+        const t = data[active];
+        const words = t.quote.split(' ').map((w, i) =>
+          `<span class="w" style="animation-delay:${(i * 0.025).toFixed(3)}s">${w}&nbsp;</span>`
+        ).join('');
+        contentHost.innerHTML =
+          `<h3 class="tc-name">${t.name}</h3>` +
+          `<p class="tc-role">${t.role}</p>` +
+          `<p class="tc-quote">${words}</p>`;
+      }
+
+      function goTo(i) {
+        active = ((i % len) + len) % len;
+        layoutImages();
+        renderContent();
+      }
+
+      function restartAutoplay() {
+        if (autoplayTimer) clearInterval(autoplayTimer);
+        autoplayTimer = setInterval(() => goTo(active + 1), 5000);
+      }
+
+      prevBtn.addEventListener('click', () => { goTo(active - 1); restartAutoplay(); });
+      nextBtn.addEventListener('click', () => { goTo(active + 1); restartAutoplay(); });
+
+      layoutImages();
+      renderContent();
+      restartAutoplay();
+    })();
+
+    /* ============================================================
+       MENÚ KINÉTICO — traducido de React+GSAP a JS vanilla + GSAP
+       (referencia: sterling-gate-kinetic-navigation)
+       ============================================================ */
+    (function () {
+      const toggleBtn = document.getElementById('kineticToggle');
+      const overlay = document.getElementById('kineticOverlay');
+      const backdrop = document.getElementById('kineticBackdrop');
+      const menu = document.getElementById('kineticMenu');
+      const bgPanels = overlay.querySelectorAll('.backdrop-layer');
+      const menuLinks = overlay.querySelectorAll('.kinetic-link');
+      const mtP1 = document.getElementById('mtP1');
+      const mtP2 = document.getElementById('mtP2');
+      const mtIcon = document.getElementById('mtIcon');
+      const items = overlay.querySelectorAll('.kinetic-item[data-shape]');
+      const shapesHost = overlay.querySelector('.ambient-shapes');
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const canHover = window.matchMedia('(hover:hover) and (pointer:fine)').matches;
+
+      let isOpen = false;
+      let hasGsap = typeof gsap !== 'undefined';
+
+      // easing custom para el hover de las shapes, con fallback si CustomEase no cargó
+      if (hasGsap) {
+        try {
+          if (typeof CustomEase !== 'undefined') {
+            gsap.registerPlugin(CustomEase);
+            CustomEase.create('main', '0.65,0.01,0.05,0.99');
+          }
+        } catch (e) { /* seguimos con el ease por defecto de gsap */ }
+      }
+
+      // stagger de entrada de los links: se fija una sola vez vía transition-delay CSS
+      menuLinks.forEach((link, i) => { link.style.transitionDelay = (0.28 + i * 0.06) + 's'; });
+
+      // ---- hover shapes (solo desktop con hover real) ----
+      if (canHover && !reduceMotion) {
+        items.forEach(item => {
+          const idx = item.getAttribute('data-shape');
+          const shape = shapesHost.querySelector('.bg-shape-' + idx);
+          if (!shape) return;
+          const els = shape.querySelectorAll('.shape-el');
+
+          item.addEventListener('mouseenter', () => {
+            shapesHost.querySelectorAll('.bg-shape').forEach(s => s.classList.remove('active'));
+            shape.classList.add('active');
+            if (hasGsap) {
+              gsap.fromTo(els, { scale: .5, opacity: 0, rotation: -10, transformOrigin: '50% 50%' },
+                { scale: 1, opacity: 1, rotation: 0, duration: .6, stagger: .08, ease: 'back.out(1.7)', overwrite: 'auto' });
+            }
+          });
+          item.addEventListener('mouseleave', () => {
+            if (hasGsap) {
+              gsap.to(els, {
+                scale: .8, opacity: 0, duration: .3, ease: 'power2.in', overwrite: 'auto',
+                onComplete: () => shape.classList.remove('active')
+              });
+            } else { shape.classList.remove('active'); }
+          });
+        });
+      }
+
+      // Apertura/cierre: siempre por CSS (clases), 100% independiente de si GSAP cargó o no.
+      function openMenu() {
+        isOpen = true;
+        overlay.classList.add('is-open');
+        toggleBtn.classList.add('is-active');
+        toggleBtn.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeMenu() {
+        isOpen = false;
+        overlay.classList.remove('is-open');
+        toggleBtn.classList.remove('is-active');
+        toggleBtn.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      }
+
+      toggleBtn.addEventListener('click', () => isOpen ? closeMenu() : openMenu());
+      backdrop.addEventListener('click', closeMenu);
+      window.addEventListener('keydown', (e) => { if (e.key === 'Escape' && isOpen) closeMenu(); });
+
+      // clic en un link: si trae data-tab, activa ese servicio antes de cerrar/navegar
+      overlay.querySelectorAll('.kinetic-link, .kinetic-academy-link').forEach(link => {
+        link.addEventListener('click', () => {
+          const tab = link.getAttribute('data-tab');
+          if (tab) activateServiceTab(tab);
+          closeMenu();
+        });
+      });
+    })();
+  </script>
+</body>
+
+</html>

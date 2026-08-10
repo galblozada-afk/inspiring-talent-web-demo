@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="/assets/img/favicon-inspiring.png">
+  <link rel="apple-touch-icon" href="/assets/img/favicon-inspiring.png">
+  <title>Contacto — InspiringTalent®</title>
+  <meta name="description" content="Agenda una conversación con Inspiring Talent para diseñar una solución de formación, coaching o evaluación de talento.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Inter:wght@400;500;600;700&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/site.css">
+  <link rel="stylesheet" href="/contact.css">
+</head>
+<body class="contact-page">
+  <%- include('partials/site-header') %>
+  <main id="contenido">
+    <section class="contact-hero">
+      <div class="contact-orb contact-orb--one" aria-hidden="true"></div>
+      <div class="contact-orb contact-orb--two" aria-hidden="true"></div>
+      <div class="contact-wrap contact-grid">
+        <div class="contact-intro">
+          <span class="eyebrow">Contacto</span>
+          <h1>Hablemos de lo que tu equipo necesita ahora.</h1>
+          <p>Cuéntanos el momento que vive tu organización. Diseñaremos contigo el siguiente paso para desarrollar talento, liderazgo y resultados.</p>
+          <div class="contact-promises" aria-label="Qué sucede después de enviar tu solicitud">
+            <div><b>01</b><span>Comparte tu reto</span></div>
+            <div><b>02</b><span>Conversemos con contexto</span></div>
+            <div><b>03</b><span>Diseñemos una ruta</span></div>
+          </div>
+          <a class="contact-whatsapp" href="https://wa.link/77etlj" target="_blank" rel="noopener"><span aria-hidden="true">◌</span> ¿Prefieres escribirnos por WhatsApp? <b>Vamos →</b></a>
+        </div>
+
+        <section class="contact-form-card" aria-labelledby="contact-form-title">
+          <% if (contactStatus === 'sent') { %>
+            <div class="contact-success" role="status"><span aria-hidden="true">✓</span><div><b>¡Tu mensaje ya está con nosotros!</b><p>Muy pronto nos pondremos en contacto contigo.</p></div></div>
+          <% } %>
+          <% if (formError) { %><div class="contact-error" role="alert"><%= formError %></div><% } %>
+          <span class="contact-kicker">Agenda una consultoría</span>
+          <h2 id="contact-form-title">Empecemos por conocerte.</h2>
+          <p class="contact-form-lede">Los campos con <strong>*</strong> son necesarios para poder responderte.</p>
+          <form action="/contacto" method="post" class="contact-form">
+            <div class="contact-fields contact-fields--two">
+              <div><label for="contact-name">Nombre completo <span aria-hidden="true">*</span></label><input id="contact-name" name="name" type="text" autocomplete="name" value="<%= formData.name || '' %>" required></div>
+              <div><label for="contact-company">Empresa <span class="contact-optional">Opcional</span></label><input id="contact-company" name="company" type="text" autocomplete="organization" value="<%= formData.company || '' %>"></div>
+            </div>
+            <div class="contact-fields contact-fields--two">
+              <div><label for="contact-email">Correo electrónico <span aria-hidden="true">*</span></label><input id="contact-email" name="email" type="email" autocomplete="email" value="<%= formData.email || '' %>" placeholder="tu@empresa.com" required></div>
+              <div><label for="contact-phone">Teléfono <span class="contact-optional">Opcional</span></label><input id="contact-phone" name="phone" type="tel" autocomplete="tel" value="<%= formData.phone || '' %>"></div>
+            </div>
+            <fieldset class="contact-services"><legend>¿En qué podemos ayudarte? <span aria-hidden="true">*</span></legend><div class="contact-service-options"><% const choices = ['Coaching Organizacional', 'Formación', 'Evaluación de Talento', 'Solución integral para mi empresa', 'Otro']; choices.forEach(function(choice, index) { %><label class="contact-service-option"><input type="radio" name="service" value="<%= choice %>" <%= formData.service === choice ? 'checked' : '' %> <%= index === 0 ? 'required' : '' %>><span><i aria-hidden="true"></i><b><%= choice %></b></span></label><% }); %></div></fieldset>
+            <div><label for="contact-message">¿Qué te gustaría transformar? <span class="contact-optional">Opcional</span></label><textarea id="contact-message" name="message" rows="4" maxlength="2000" placeholder="Por ejemplo: queremos fortalecer el liderazgo de nuestros mandos medios."><%= formData.message || '' %></textarea></div>
+            <label class="contact-newsletter"><input type="checkbox" name="newsletter_opt_in" value="yes" <%= formData.newsletter_opt_in ? 'checked' : '' %>><span><i aria-hidden="true">✓</i> Sí, quiero recibir ideas y recursos para seguir creciendo.</span></label>
+            <button class="contact-submit" type="submit">Enviar solicitud <span aria-hidden="true">→</span></button>
+            <p class="contact-form-note">Tu información se registra para dar seguimiento a tu consulta. No enviaremos correos de marketing si no lo eliges.</p>
+          </form>
+        </section>
+      </div>
+    </section>
+  </main>
+  <%- include('partials/site-footer') %>
+</body>
+</html>
