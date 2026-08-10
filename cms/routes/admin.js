@@ -74,7 +74,7 @@ function buildPageBlocks(body) {
 }
 
 function makeUploader(subdir, allowed) {
-  const serverless = process.env.NETLIFY || process.env.AWS_LAMBDA_FUNCTION_NAME || process.env.LAMBDA_TASK_ROOT || __dirname.includes('netlify/functions');
+  const serverless = process.env.NETLIFY || process.env.AWS_LAMBDA_FUNCTION_NAME || process.env.LAMBDA_TASK_ROOT || __dirname.includes('netlify/functions') || process.cwd() === '/var/task';
   const uploadRoot = serverless ? path.join('/tmp', 'inspiring-talent-uploads') : path.join(__dirname, '..', 'public', 'uploads');
   const dest = path.join(uploadRoot, subdir);
   if (!fs.existsSync(dest)) fs.mkdirSync(dest, { recursive: true });

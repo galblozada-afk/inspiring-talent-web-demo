@@ -31,7 +31,7 @@ if (!fs.existsSync(uploadRoot)) fs.mkdirSync(uploadRoot, { recursive: true });
 app.use('/uploads', express.static(uploadRoot));
 app.use(express.static(path.join(__dirname, 'public')));
 
-const isServerless = process.env.NETLIFY || process.env.AWS_LAMBDA_FUNCTION_NAME || process.env.LAMBDA_TASK_ROOT || __dirname.includes('netlify/functions');
+const isServerless = process.env.NETLIFY || process.env.AWS_LAMBDA_FUNCTION_NAME || process.env.LAMBDA_TASK_ROOT || __dirname.includes('netlify/functions') || process.cwd() === '/var/task';
 const sessionDir = isServerless ? path.join('/tmp', 'inspiring-talent-sessions') : path.join(__dirname, 'data', 'sessions');
 if (!fs.existsSync(sessionDir)) fs.mkdirSync(sessionDir, { recursive: true });
 app.use(session({
