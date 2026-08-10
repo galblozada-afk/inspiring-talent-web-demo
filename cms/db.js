@@ -7,7 +7,11 @@ const path = require('path');
 const IS_NETLIFY = process.env.NETLIFY === 'true' || Boolean(process.env.NETLIFY);
 const DATA_DIR = IS_NETLIFY ? path.join('/tmp', 'inspiring-talent-data') : path.join(__dirname, 'data');
 const DB_FILE = path.join(DATA_DIR, 'db.json');
-const SEED_DB_FILE = path.join(__dirname, '..', 'data', 'db.json');
+const SEED_DB_CANDIDATES = [
+  path.join(__dirname, '..', 'data', 'db.json'),
+  path.join(__dirname, '..', '..', 'data', 'db.json'),
+  path.join(__dirname, '..', '..', 'cms', 'data', 'db.json')
+];
 
 const EMPTY_DB = {
   adminUsers: [],       // { id, email, password_hash }
@@ -28,8 +32,9 @@ const EMPTY_DB = {
 
 if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });
 if (!fs.existsSync(DB_FILE)) {
-  const seed = IS_NETLIFY && fs.existsSync(SEED_DB_FILE)
-    ? fs.readFileSync(SEED_DB_FILE, 'utf8')
+  const seedFile = SEED_DB_CANDIDATES.find((candidate) => fs.existsSync(candidate));
+  const seed = IS_NETLIFY && seedFile
+    ? fs.readFileSync(seedFile, 'utf8')
     : JSON.stringify(EMPTY_DB, null, 2);
   fs.writeFileSync(DB_FILE, seed);
 }
