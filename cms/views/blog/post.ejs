@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="/assets/img/favicon-inspiring.png">
+  <link rel="apple-touch-icon" href="/assets/img/favicon-inspiring.png">
+  <title><%= post.title %> — Blog InspiringTalent®</title>
+  <meta name="description" content="<%= post.excerpt || post.title %>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Inter:wght@400;500;600;700&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/site.css">
+  <link rel="stylesheet" href="/blog.css">
+</head>
+<body style="background:var(--mist,#F3F4F6);">
+
+  <%- include('../partials/site-header') %>
+
+  <header class="blog-legacy-header scrolled" style="position:relative;">
+    <div class="nav">
+      <a href="/" class="logo"><img src="/assets/logo-inspiringtalent.png" alt="InspiringTalent"></a>
+      <div class="nav-right">
+        <a href="/blog" class="btn btn-ghost">← Blog</a>
+        <a href="/" class="btn btn-primary">Volver al sitio</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="blog-wrap blog-post">
+    <article>
+      <span class="blog-date"><%= post.published_at ? new Date(post.published_at).toLocaleDateString('es-MX', { year:'numeric', month:'long', day:'numeric' }) : '' %></span>
+      <% if (post.badges.length) { %><div class="blog-post-badges"><% post.badges.forEach(function(badge){ %><span class="blog-chip" style="--badge-color:<%= badge.color %>"><%= badge.name %></span><% }) %></div><% } %>
+      <h1><%= post.title %></h1>
+      <% if (post.cover_image) { %>
+        <div class="blog-post-cover"><img src="<%= post.cover_image %>" alt="<%= post.title %>"></div>
+      <% } %>
+      <% if (post.youtube_id) { %>
+        <section class="blog-video" aria-label="Video relacionado">
+          <span class="eyebrow">Video</span>
+          <div class="blog-video-frame"><iframe src="https://www.youtube-nocookie.com/embed/<%= post.youtube_id %>?rel=0" title="Video de Inspiring Talent: <%= post.title %>" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+        </section>
+      <% } %>
+      <div class="blog-post-content">
+        <%- post.content_html %>
+      </div>
+      <% if (post.gallery.length) { %>
+        <section class="blog-gallery" data-blog-gallery aria-label="Galería de imágenes">
+          <div class="blog-gallery-stage">
+            <% post.gallery.forEach(function(image, index){ %><img src="<%= image.image %>" alt="<%= image.alt || post.title %>" data-blog-gallery-slide <%= index === 0 ? '' : 'hidden' %>><% }) %>
+          </div>
+          <div class="blog-gallery-controls">
+            <button type="button" data-blog-gallery-prev aria-label="Imagen anterior">←</button>
+            <p data-blog-gallery-caption aria-live="polite"><%= post.gallery[0].alt || 'Imagen 1 de la galería' %></p>
+            <button type="button" data-blog-gallery-next aria-label="Imagen siguiente">→</button>
+          </div>
+          <div class="blog-gallery-dots" role="group" aria-label="Elegir imagen"><% post.gallery.forEach(function(image, index){ %><button type="button" data-blog-gallery-dot="<%= index %>" aria-label="Ver imagen <%= index + 1 %>" aria-pressed="<%= index === 0 ? 'true' : 'false' %>"></button><% }) %></div>
+        </section>
+      <% } %>
+    </article>
+
+    <% if (related.length) { %>
+    <div class="blog-related">
+      <h3>Más artículos</h3>
+      <div class="blog-grid">
+        <% related.forEach(function(p){ %>
+          <a class="blog-card" href="/blog/<%= p.slug %>">
+            <% if (p.cover_image) { %><div class="blog-card-img"><img src="<%= p.cover_image %>" alt="<%= p.title %>" loading="lazy"></div><% } %>
+            <div class="blog-card-body">
+              <h2><%= p.title %></h2>
+              <span class="blog-read-more">Leer más →</span>
+            </div>
+          </a>
+        <% }) %>
+      </div>
+    </div>
+    <% } %>
+  </main>
+
+  <%- include('../partials/site-footer') %>
+  <script src="/blog.js" defer></script>
+  <footer class="blog-legacy-footer">
+    <div class="wrap foot-bottom" style="border-top:none;">
+      <span>INSPIRING TALENT 2021. ALL RIGHTS RESERVED</span>
+      <a href="/admin/login" aria-label="Acceso administrador" style="opacity:.35;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+          <path d="M16.555 3.843l3.602 3.602a2.877 2.877 0 0 1 0 4.069l-2.643 2.643a2.877 2.877 0 0 1 -4.069 0l-.301 -.301l-6.558 6.558a2 2 0 0 1 -1.239 .578l-.175 .008h-1.172a1 1 0 0 1 -.993 -.883l-.007 -.117v-1.172a2 2 0 0 1 .467 -1.284l.119 -.13l.414 -.414h2v-2h2v-2l2.144 -2.144l-.301 -.301a2.877 2.877 0 0 1 0 -4.069l2.643 -2.643a2.877 2.877 0 0 1 4.069 0z"/>
+          <path d="M15 9h.01"/>
+        </svg>
+      </a>
+    </div>
+  </footer>
+
+</body>
+</html>

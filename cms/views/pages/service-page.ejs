@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="/assets/img/favicon-inspiring.png">
+  <link rel="apple-touch-icon" href="/assets/img/favicon-inspiring.png">
+  <title><%= page.title %> — InspiringTalent®</title>
+  <meta name="description" content="<%= page.intro %>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Inter:wght@400;500;600;700&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/site.css">
+  <link rel="stylesheet" href="/pages.css">
+  <link rel="stylesheet" href="/subpage-editorial-hero.css">
+  <link rel="stylesheet" href="/subpage-editorial-coaching.css">
+  <link rel="stylesheet" href="/page-scroll.css">
+</head>
+<body class="page-body">
+  <%- include('../partials/site-header') %>
+  <a class="page-skip" href="#contenido">Ir al contenido</a>
+  <header class="page-header">
+    <div class="page-wrap page-nav">
+      <a href="/" class="logo"><img src="/assets/logo-inspiringtalent.png" alt="InspiringTalent"></a>
+      <a class="btn btn-primary page-header-cta" href="/contacto">Agenda una consultoría</a>
+    </div>
+  </header>
+  <nav class="page-subnav" aria-label="Secciones de Inspiring Talent">
+    <div class="page-wrap page-subnav-inner">
+      <% const navigation = [
+        { slug: 'coaching-organizacional', label: 'Coaching' },
+        { slug: 'formacion', label: 'Formación' },
+        { slug: 'evaluacion-de-talento', label: 'Evaluación' },
+        { slug: 'soluciones-para-empresas', label: 'Empresas' },
+        { slug: 'nosotros', label: 'Nosotros' }
+      ]; %>
+      <% navigation.forEach(function(item) { %>
+        <a href="/<%= item.slug %>" <%= item.slug === page.slug ? 'aria-current="page"' : '' %>><%= item.label %></a>
+      <% }); %>
+      <a href="/#servicios">Inicio</a>
+    </div>
+  </nav>
+  <main id="contenido" class="page-main">
+    <%- include('../partials/subpage-editorial-hero', { page }) %>
+    <section class="page-section page-intro" data-page-scroll>
+      <div class="page-wrap page-intro-grid">
+        <span class="page-index">01</span>
+        <p><%= page.focus %></p>
+      </div>
+    </section>
+    <section class="page-section">
+      <div class="page-wrap" data-page-scroll>
+        <span class="eyebrow">Cómo podemos ayudarte</span>
+        <div class="page-grid">
+          <% page.sections.forEach(function(section, index) { %>
+            <article class="page-card" data-page-scroll style="--page-scroll-delay:<%= index * 90 %>ms">
+              <span class="page-card-index">0<%= index + 1 %></span>
+              <h2><%= section.title %></h2>
+              <p><%= section.text %></p>
+              <ul>
+                <% section.items.forEach(function(item) { %><li><%= item %></li><% }); %>
+              </ul>
+            </article>
+          <% }); %>
+        </div>
+      </div>
+    </section>
+    <% if (page.journey) { %>
+    <section class="page-journey">
+      <div class="page-wrap" data-page-scroll><span class="eyebrow">Ruta de talento</span><h2>Una visión conectada del desarrollo</h2><div class="page-journey-grid"><% page.journey.forEach(function(step) { %><article><span><%= step.phase %></span><h3><%= step.title %></h3><p><%= step.text %></p></article><% }); %></div></div>
+    </section>
+    <% } %>
+    <section class="page-cta">
+      <div class="page-wrap page-cta-inner" data-page-scroll>
+        <span class="eyebrow">Siguiente paso</span>
+        <h2><%= page.ctaTitle %></h2>
+        <p><%= page.ctaText %></p>
+        <a class="btn btn-primary" href="/contacto">Agenda una consultoría</a>
+      </div>
+    </section>
+  </main>
+  <%- include('../partials/site-footer') %>
+  <script src="/page-scroll.js" defer></script>
+  <footer class="page-footer">
+    <div class="page-wrap">
+      <a href="/blog">Ideas sobre liderazgo, talento y cultura →</a>
+      <span>INSPIRING TALENT © <%= new Date().getFullYear() %></span>
+    </div>
+  </footer>
+</body>
+</html>

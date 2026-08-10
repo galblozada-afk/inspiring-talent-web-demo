@@ -1,0 +1,72 @@
+<%- include('../partials/admin-top', { pageTitle: 'Hero', active: 'hero' }) %>
+<%- include('../partials/admin-topline', { h1: 'Hero', email: email, flash: flash }) %>
+
+<div class="card">
+  <h2>Texto del hero</h2>
+  <p class="hint">Eyebrow, título y palabras que rotan al final del título ("en liderazgo", "en equipos"…), y el párrafo de introducción.</p>
+  <form method="POST" action="/admin/hero/text">
+    <label>Eyebrow (texto pequeño arriba del título)</label>
+    <input type="text" name="eyebrow" value="<%= heroText.eyebrow || '' %>">
+
+    <label>Inicio del título (fijo)</label>
+    <input type="text" name="headline_prefix" value="<%= heroText.headline_prefix || '' %>">
+
+    <label>Palabras que rotan al final del título (una por línea)</label>
+    <textarea name="cycle_words" rows="5"><%= (heroText.cycle_words || []).join('\n') %></textarea>
+
+    <label>Párrafo (lede)</label>
+    <textarea name="lede" rows="3"><%= heroText.lede || '' %></textarea>
+
+    <button class="btn" type="submit" style="margin-top:18px;">Guardar texto</button>
+  </form>
+</div>
+
+<div class="card">
+  <h2>Fondo del hero (videos / imágenes)</h2>
+  <p class="hint">Si hay 2 o más, el sitio los rota automáticamente con crossfade cada 8 segundos. El primero de la lista es el que se muestra al cargar.</p>
+
+  <div class="media-list">
+    <% if (!media.length) { %>
+      <p class="hint">Aún no hay videos ni imágenes. Agrega al menos uno abajo.</p>
+    <% } %>
+    <% media.forEach(function(m, i){ %>
+      <div class="media-item">
+        <span class="tag"><%= m.type %></span>
+        <span class="url"><%= m.url %></span>
+        <div class="actions">
+          <form method="POST" action="/admin/hero/media/<%= m.id %>/move" style="display:inline;">
+            <input type="hidden" name="dir" value="up">
+            <button class="btn ghost small" <%= i === 0 ? 'disabled' : '' %> type="submit">↑</button>
+          </form>
+          <form method="POST" action="/admin/hero/media/<%= m.id %>/move" style="display:inline;">
+            <input type="hidden" name="dir" value="down">
+            <button class="btn ghost small" <%= i === media.length - 1 ? 'disabled' : '' %> type="submit">↓</button>
+          </form>
+          <form method="POST" action="/admin/hero/media/<%= m.id %>/delete" style="display:inline;" onsubmit="return confirm('¿Eliminar este elemento del hero?');">
+            <button class="btn danger small" type="submit">Eliminar</button>
+          </form>
+        </div>
+      </div>
+    <% }) %>
+  </div>
+
+  <form method="POST" action="/admin/hero/media/add" enctype="multipart/form-data" style="border-top:1px solid #e2e5ea;padding-top:16px;">
+    <div class="row">
+      <div>
+        <label>Tipo</label>
+        <select name="type">
+          <option value="video">Video</option>
+          <option value="image">Imagen</option>
+        </select>
+      </div>
+    </div>
+    <label>Sube un archivo</label>
+    <input type="file" name="file" accept="video/mp4,video/webm,video/quicktime,image/*">
+    <p class="help-block">— o bien —</p>
+    <label>Pega una URL externa (ej. video ya hosteado en otro lugar)</label>
+    <input type="url" name="external_url" placeholder="https://...">
+    <button class="btn mint" type="submit" style="margin-top:16px;">Agregar al hero</button>
+  </form>
+</div>
+
+<%- include('../partials/admin-bottom') %>

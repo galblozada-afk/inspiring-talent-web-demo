@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="/assets/img/favicon-inspiring.png">
+  <link rel="apple-touch-icon" href="/assets/img/favicon-inspiring.png">
+  <title><%= page.title %> — InspiringTalent®</title>
+  <meta name="description" content="<%= page.intro %>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Inter:wght@400;500;600;700&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/site.css">
+  <link rel="stylesheet" href="/subpage-editorial-hero.css">
+  <link rel="stylesheet" href="/subpage-editorial-coaching.css">
+  <link rel="stylesheet" href="/coaching-page.css">
+</head>
+<body class="page-body coaching-page-body">
+  <%- include('../partials/site-header') %>
+  <main id="contenido" data-coaching-route>
+    <%- include('../partials/subpage-editorial-hero', { page }) %>
+
+    <section class="coaching-challenges" data-coaching-reveal>
+      <div class="coaching-wrap coaching-challenges-grid">
+        <div>
+          <span class="coaching-eyebrow">El cambio empieza en una conversación</span>
+          <h2>CUANDO EL RETO ES REAL, EL DESARROLLO TIENE QUE LLEGAR A LA PRÁCTICA.</h2>
+        </div>
+        <div class="coaching-challenges-copy">
+          <p>El cambio se vuelve difícil cuando las decisiones se toman en solitario, las prioridades compiten y las conversaciones importantes se postergan. El coaching crea un espacio para mirar el sistema, elegir un foco y llevar el aprendizaje al trabajo cotidiano.</p>
+          <a class="coaching-text-link" href="/contacto?service=coaching-organizacional">Hablemos de tu contexto <span>→</span></a>
+        </div>
+      </div>
+      <div class="coaching-wrap coaching-pain-grid" aria-label="Retos que puede abordar el coaching organizacional">
+        <article><span>01</span><h3>Decisiones aisladas</h3><p>Cuando el liderazgo necesita recuperar perspectiva, prioridad y capacidad de acción.</p></article>
+        <article><span>02</span><h3>Equipos desalineados</h3><p>Cuando las metas compartidas no se traducen en acuerdos, coordinación y confianza.</p></article>
+        <article><span>03</span><h3>Conversaciones postergadas</h3><p>Cuando el feedback, el conflicto o las expectativas no encuentran un espacio útil.</p></article>
+        <article><span>04</span><h3>Aprendizaje sin práctica</h3><p>Cuando el desarrollo necesita convertirse en una forma distinta de trabajar.</p></article>
+      </div>
+    </section>
+
+    <section class="coaching-route" aria-labelledby="coaching-route-title">
+      <div class="coaching-wrap coaching-section-head" data-coaching-reveal>
+        <span class="coaching-eyebrow">Una ruta conectada</span>
+        <h2 id="coaching-route-title">UN RETO. CUATRO NIVELES PARA MOVERLO.</h2>
+        <p>No son servicios que compiten entre sí: son distintos puntos de entrada para que las personas, los equipos y la organización avancen con intención.</p>
+      </div>
+      <div class="coaching-wrap coaching-route-grid" data-coaching-reveal>
+        <article class="coaching-book coaching-route-card coaching-book--executivo">
+          <span class="coaching-book-spine" aria-hidden="true"></span>
+          <button type="button" class="coaching-book-cover coaching-route-trigger" data-coaching-route-card aria-expanded="false" aria-controls="coaching-panel-executivo">
+            <span class="coaching-route-number">01</span><span class="coaching-route-title">Coaching ejecutivo y de liderazgo</span><span class="coaching-route-symbol" aria-hidden="true">+</span>
+          </button>
+          <div id="coaching-panel-executivo" class="coaching-book-sheet coaching-route-panel" data-coaching-panel hidden>
+            <p class="coaching-route-lead">Para CEOs, directores, gerentes y líderes que necesitan ganar claridad sobre su impacto.</p>
+            <dl><div><dt>Foco</dt><dd>Decisiones, conversaciones, influencia y liderazgo personal.</dd></div><div><dt>Práctica</dt><dd>Objetivos de desarrollo, reflexión confidencial y seguimiento de acciones.</dd></div></dl>
+          </div>
+        </article>
+        <article class="coaching-book coaching-route-card coaching-book--equipos">
+          <span class="coaching-book-spine" aria-hidden="true"></span>
+          <button type="button" class="coaching-book-cover coaching-route-trigger" data-coaching-route-card aria-expanded="false" aria-controls="coaching-panel-equipos">
+            <span class="coaching-route-number">02</span><span class="coaching-route-title">Coaching sistémico de equipos</span><span class="coaching-route-symbol" aria-hidden="true">+</span>
+          </button>
+          <div id="coaching-panel-equipos" class="coaching-book-sheet coaching-route-panel" data-coaching-panel hidden>
+            <p class="coaching-route-lead">Para equipos que buscan elevar su capacidad de lograr resultados juntos, no solo sumar esfuerzos individuales.</p>
+            <dl><div><dt>Foco</dt><dd>Propósito compartido, relaciones, coordinación y calidad de decisiones.</dd></div><div><dt>Práctica</dt><dd>Acuerdos de equipo, conversaciones para tensiones y revisión de avances.</dd></div></dl>
+          </div>
+        </article>
+        <article class="coaching-book coaching-route-card coaching-book--lider">
+          <span class="coaching-book-spine" aria-hidden="true"></span>
+          <button type="button" class="coaching-book-cover coaching-route-trigger" data-coaching-route-card aria-expanded="false" aria-controls="coaching-panel-lider">
+            <span class="coaching-route-number">03</span><span class="coaching-route-title">Líder coach</span><span class="coaching-route-symbol" aria-hidden="true">+</span>
+          </button>
+          <div id="coaching-panel-lider" class="coaching-book-sheet coaching-route-panel" data-coaching-panel hidden>
+            <p class="coaching-route-lead">Para líderes y coaches internos que quieren hacer del desarrollo una práctica cotidiana con sus personas.</p>
+            <dl><div><dt>Foco</dt><dd>Escucha, preguntas, feedback, responsabilidad y crecimiento de talento.</dd></div><div><dt>Práctica</dt><dd>Competencias de coaching aplicadas a conversaciones reales de liderazgo.</dd></div></dl>
+          </div>
+        </article>
+        <article class="coaching-book coaching-route-card coaching-book--cultura">
+          <span class="coaching-book-spine" aria-hidden="true"></span>
+          <button type="button" class="coaching-book-cover coaching-route-trigger" data-coaching-route-card aria-expanded="false" aria-controls="coaching-panel-cultura">
+            <span class="coaching-route-number">04</span><span class="coaching-route-title">Cultura de coaching</span><span class="coaching-route-symbol" aria-hidden="true">+</span>
+          </button>
+          <div id="coaching-panel-cultura" class="coaching-book-sheet coaching-route-panel" data-coaching-panel hidden>
+            <p class="coaching-route-lead">Para organizaciones que quieren que el aprendizaje, la colaboración y el desarrollo vivan en todos los niveles.</p>
+            <dl><div><dt>Foco</dt><dd>Prácticas de liderazgo, aprendizaje continuo y conversaciones de crecimiento.</dd></div><div><dt>Práctica</dt><dd>Estrategia de cultura, formación de líderes y seguimiento de hábitos colectivos.</dd></div></dl>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="coaching-process" data-coaching-reveal aria-labelledby="coaching-process-title">
+      <div class="coaching-wrap coaching-process-inner">
+        <div class="coaching-process-intro"><span class="coaching-eyebrow">Una manera de acompañar</span><h2 id="coaching-process-title">DE LA REFLEXIÓN A LA PRÁCTICA.</h2><p>Diseñamos cada proceso con el contexto y el objetivo de quien lo vive. La ruta puede comenzar en cualquier nivel, pero siempre se conecta con el trabajo real.</p></div>
+        <ol class="coaching-process-list">
+          <li><div><h3>Comprender el contexto</h3><p>Escuchamos el reto, las personas involucradas y lo que hoy necesita cambiar.</p></div></li>
+          <li><div><h3>Acordar el foco</h3><p>Definimos objetivos observables y el tipo de acompañamiento que mejor responde.</p></div></li>
+          <li><div><h3>Practicar en el trabajo</h3><p>Llevamos las conversaciones, decisiones y acuerdos al día a día.</p></div></li>
+          <li><div><h3>Dar seguimiento</h3><p>Revisamos aprendizajes, ajustes y próximos pasos para sostener el avance.</p></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="coaching-faq" data-coaching-reveal aria-labelledby="coaching-faq-title">
+      <div class="coaching-wrap coaching-faq-layout">
+        <div class="coaching-faq-intro">
+          <span class="coaching-eyebrow">Antes de comenzar</span>
+          <h2 id="coaching-faq-title">PREGUNTAS QUE ABREN UNA BUENA CONVERSACIÓN.</h2>
+          <p>Un buen proceso empieza por entender qué necesitas y cómo podemos acompañarte. Aquí respondemos las dudas más frecuentes.</p>
+        </div>
+        <div class="coaching-faq-list">
+          <article class="coaching-faq-item is-coaching-faq-open">
+            <button type="button" class="coaching-faq-trigger" data-coaching-faq-trigger aria-expanded="true" aria-controls="coaching-faq-enfoque"><span>¿Qué diferencia hay entre coaching, consultoría y capacitación?</span><i aria-hidden="true">+</i></button>
+            <div id="coaching-faq-enfoque" class="coaching-faq-answer">El coaching crea un espacio de reflexión y acción para que las personas construyan sus propias respuestas. La consultoría aporta recomendaciones especializadas y la capacitación desarrolla conocimientos o habilidades. Podemos articularlas cuando el reto lo necesita.</div>
+          </article>
+          <article class="coaching-faq-item">
+            <button type="button" class="coaching-faq-trigger" data-coaching-faq-trigger aria-expanded="false" aria-controls="coaching-faq-personas"><span>¿Para quién está pensado el coaching organizacional?</span><i aria-hidden="true">+</i></button>
+            <div id="coaching-faq-personas" class="coaching-faq-answer" hidden>Para líderes que necesitan claridad en momentos de cambio, equipos que buscan coordinarse mejor y organizaciones que quieren convertir el aprendizaje en una práctica de cultura.</div>
+          </article>
+          <article class="coaching-faq-item">
+            <button type="button" class="coaching-faq-trigger" data-coaching-faq-trigger aria-expanded="false" aria-controls="coaching-faq-medicion"><span>¿Cómo definimos el foco y damos seguimiento al avance?</span><i aria-hidden="true">+</i></button>
+            <div id="coaching-faq-medicion" class="coaching-faq-answer" hidden>Comenzamos con una conversación de contexto para acordar objetivos observables. Durante el proceso revisamos aprendizajes, decisiones y acciones para mantener el trabajo conectado con los resultados que importan.</div>
+          </article>
+          <article class="coaching-faq-item">
+            <button type="button" class="coaching-faq-trigger" data-coaching-faq-trigger aria-expanded="false" aria-controls="coaching-faq-confidencialidad"><span>¿Las conversaciones son confidenciales?</span><i aria-hidden="true">+</i></button>
+            <div id="coaching-faq-confidencialidad" class="coaching-faq-answer" hidden>Sí. La confianza es parte del proceso. Acordamos desde el inicio qué información se comparte para dar seguimiento organizacional y qué conversaciones permanecen en el espacio confidencial de coaching.</div>
+          </article>
+          <article class="coaching-faq-item">
+            <button type="button" class="coaching-faq-trigger" data-coaching-faq-trigger aria-expanded="false" aria-controls="coaching-faq-duracion"><span>¿Cuánto dura un proceso de acompañamiento?</span><i aria-hidden="true">+</i></button>
+            <div id="coaching-faq-duracion" class="coaching-faq-answer" hidden>Depende del reto, las personas involucradas y el cambio que se busca sostener. Diseñamos una ruta con ritmo, alcances y puntos de revisión claros antes de iniciar.</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="coaching-audiences" aria-labelledby="coaching-audiences-title">
+      <div class="coaching-wrap coaching-section-head" data-coaching-reveal>
+        <span class="coaching-eyebrow">Elige dónde empezar</span>
+        <h2 id="coaching-audiences-title">UN MISMO CAMBIO, DISTINTOS PUNTOS DE ENTRADA.</h2>
+      </div>
+      <div class="coaching-wrap coaching-audience-grid" data-coaching-reveal>
+        <a class="coaching-audience-card" href="/contacto?service=coaching-organizacional"><h3>Empresas y RH</h3><p>Para diseñar una ruta de desarrollo conectada con prioridades de negocio, personas y cultura.</p><strong>Diseñar un plan <i>→</i></strong></a>
+        <a class="coaching-audience-card" href="/contacto?service=coaching-organizacional"><h3>Líderes</h3><p>Para fortalecer conversaciones, presencia y decisiones que movilizan a otros.</p><strong>Explorar coaching ejecutivo <i>→</i></strong></a>
+        <a class="coaching-audience-card" href="/contacto?service=coaching-organizacional"><h3>Equipos y coaches internos</h3><p>Para construir acuerdos, colaboración y competencias de coaching que se usan todos los días.</p><strong>Impulsar a mi equipo <i>→</i></strong></a>
+      </div>
+    </section>
+
+    <section class="coaching-final-cta" data-coaching-reveal>
+      <div class="coaching-wrap coaching-final-inner">
+        <span class="coaching-eyebrow">Siguiente conversación</span>
+        <h2>HAGAMOS ESPACIO PARA EL CAMBIO QUE TU ORGANIZACIÓN NECESITA.</h2>
+        <p>Cuéntanos qué está viviendo tu liderazgo, tu equipo o tu organización. Diseñaremos una conversación inicial para identificar un buen punto de partida.</p>
+        <a class="btn btn-primary" href="/contacto?service=coaching-organizacional">Agenda una consultoría <span>→</span></a>
+      </div>
+    </section>
+  </main>
+  <%- include('../partials/site-footer') %>
+  <script src="/coaching-page.js" defer></script>
+</body>
+</html>

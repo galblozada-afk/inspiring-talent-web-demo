@@ -1,0 +1,50 @@
+<% const isCoachingHero = page.slug === 'coaching-organizacional'; %>
+<% const isTrainingHero = typeof heroVariant !== 'undefined' && heroVariant === 'training-triangles'; %>
+<% const resolvedHeroImage = typeof heroImage !== 'undefined' ? heroImage : (isCoachingHero ? '/assets/img/coaching-organizacional-hero-v2.png' : '/assets/img/airam-hero-nosotros-v2.png'); %>
+<% const resolvedHeroAlt = typeof heroAlt !== 'undefined' ? heroAlt : (isCoachingHero ? 'Equipo colaborando en desarrollo organizacional' : 'Airam Sánchez Santos, fundadora de Inspiring Talent'); %>
+<section class="subpage-editorial-hero <%= isCoachingHero ? 'subpage-editorial-hero--coaching' : '' %> <%= typeof heroVariant !== 'undefined' ? heroVariant : '' %>" aria-labelledby="subpage-editorial-title">
+  <div class="subpage-editorial-shell">
+    <div class="subpage-editorial-copy">
+      <% if (isTrainingHero) { %>
+        <div class="training-hero-side-note">
+          <span class="subpage-editorial-kicker">Formación Inspiring Talent</span>
+          <p class="training-hero-side-note-title">Del aprendizaje a la práctica.</p>
+          <ul aria-label="Resultados de la formación">
+            <li>Práctica real</li>
+            <li>Conversaciones útiles</li>
+            <li>Resultados sostenibles</li>
+          </ul>
+        </div>
+      <% } else { %>
+        <span class="subpage-editorial-kicker"><%= page.eyebrow %></span>
+        <p><%= page.intro %></p>
+        <a class="subpage-editorial-cta" href="/contacto">Agenda una consultoría <span aria-hidden="true">→</span></a>
+      <% } %>
+    </div>
+    <figure class="subpage-editorial-portrait">
+      <div class="subpage-editorial-orbit subpage-editorial-orbit--outer" aria-hidden="true"></div>
+      <div class="subpage-editorial-orbit subpage-editorial-orbit--inner" aria-hidden="true"></div>
+      <div class="subpage-editorial-disc" aria-hidden="true"></div>
+      <img src="<%= resolvedHeroImage %>" alt="<%= resolvedHeroAlt %>" fetchpriority="high">
+    </figure>
+    <div class="subpage-editorial-title-block">
+      <% if (page.slug !== 'nosotros' && page.slug !== 'formacion') { %><span class="subpage-editorial-index">Inspiring Talent</span><% } %>
+      <h1 id="subpage-editorial-title"><%= page.title %></h1>
+      <span class="subpage-editorial-rule" aria-hidden="true"></span>
+      <% if (isTrainingHero) { %>
+        <div class="training-hero-context-card">
+          <span class="subpage-editorial-kicker"><%= page.eyebrow %></span>
+          <p><%= page.intro %></p>
+          <a class="subpage-editorial-cta" href="/contacto">Agenda una consultoría <span aria-hidden="true">→</span></a>
+        </div>
+      <% } %>
+    </div>
+    <div class="subpage-editorial-meta">
+      <div class="subpage-editorial-social" aria-label="Redes sociales de Inspiring Talent">
+        <a href="https://www.linkedin.com/organization/22319247/admin/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a>
+        <a href="https://www.facebook.com/inspiringtalent/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></svg></a>
+        <a href="https://www.instagram.com/inspiringtalentmx/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>

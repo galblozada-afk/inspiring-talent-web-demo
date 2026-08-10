@@ -1,0 +1,1 @@
+[data-page-scroll]{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s cubic-bezier(.22,1,.36,1);transition-delay:var(--page-scroll-delay,0ms)}[data-page-scroll].is-page-scroll-visible{opacity:1;transform:none}@media (prefers-reduced-motion: reduce){[data-page-scroll]{opacity:1;transform:none;transition:none}}

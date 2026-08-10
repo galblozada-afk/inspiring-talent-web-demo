@@ -1,0 +1,16 @@
+<%- include('../partials/admin-top', { pageTitle: 'Páginas extra', active: 'pages' }) %>
+<%- include('../partials/admin-topline', { h1: 'Páginas extra', email: email, flash: flash }) %>
+
+<section class="card admin-pages-intro">
+  <div><span class="eyebrow">Editor sin código</span><h2>Crea páginas para eventos, programas o campañas.</h2><p class="hint">Cada página usa una estructura cuidada del sitio. Tú eliges los textos, imagen, tarjetas, llamada a la acción y si debe aparecer en el menú cinético.</p></div>
+  <a class="btn mint" href="/admin/pages/new">+ Crear página</a>
+</section>
+<section class="card">
+  <% if (!pages.length) { %><p class="hint">Aún no hay páginas extra. Crea una para enlazarla desde un evento, una campaña o el menú.</p><% } %>
+  <div class="admin-page-list">
+  <% pages.forEach(function(page){ %>
+    <article class="admin-page-row"><div><span class="status-pill <%= page.status %>"><%= page.status === 'published' ? 'Publicada' : 'Borrador' %></span><h2><%= page.title %></h2><p class="hint">/<%= page.slug %> · <%= page.show_in_menu ? 'Visible en menú cinético' : 'No aparece en menú' %> · <%= page.layout === 'event' ? 'Evento' : page.layout === 'story' ? 'Historia' : 'Programa' %></p></div><div class="actions-cell"><a class="btn ghost small" href="/<%= page.slug %>" target="_blank">Ver</a><a class="btn ghost small" href="/admin/pages/<%= page.id %>/edit">Editar</a><form method="POST" action="/admin/pages/<%= page.id %>/delete" onsubmit="return confirm('¿Eliminar esta página?');"><button class="btn danger small" type="submit">Eliminar</button></form></div></article>
+  <% }) %>
+  </div>
+</section>
+<%- include('../partials/admin-bottom') %>

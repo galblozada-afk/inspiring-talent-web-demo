@@ -1,0 +1,39 @@
+<%- include('../partials/admin-top', { pageTitle: 'NOM-037', active: 'nom037' }) %>
+<%- include('../partials/admin-topline', { h1: 'Sección NOM-037', email: email, flash: flash }) %>
+
+<div class="card">
+  <p class="hint">Este es el mensaje final opcional de la página principal. Actívalo cuando quieras promover el programa; puedes ocultarlo sin borrar su contenido.</p>
+  <form method="POST" action="/admin/nom037" enctype="multipart/form-data">
+    <label class="admin-toggle"><input type="checkbox" name="is_visible" value="yes" <%= nom.is_visible !== false ? 'checked' : '' %>> Mostrar este mensaje final en la página principal</label>
+    <label>Eyebrow</label>
+    <input type="text" name="eyebrow" value="<%= nom.eyebrow || '' %>">
+
+    <label>Título</label>
+    <input type="text" name="heading" value="<%= nom.heading || '' %>">
+
+    <label>Párrafo 1</label>
+    <textarea name="paragraph1" rows="3"><%= nom.paragraph1 || '' %></textarea>
+
+    <label>Párrafo 2</label>
+    <textarea name="paragraph2" rows="3"><%= nom.paragraph2 || '' %></textarea>
+
+    <div class="row">
+      <div>
+        <label>Texto del botón</label>
+        <input type="text" name="cta_label" value="<%= nom.cta_label || '' %>">
+      </div>
+      <div>
+        <label>Enlace del botón</label>
+        <input type="text" name="cta_href" value="<%= nom.cta_href || '#contacto' %>">
+      </div>
+    </div>
+
+    <label>Imagen</label>
+    <% if (nom.image) { %><img src="<%= nom.image %>" style="max-width:280px;border-radius:8px;margin-bottom:8px;display:block;"><% } %>
+    <input type="file" name="image" accept="image/*">
+
+    <button class="btn" type="submit" style="margin-top:18px;">Guardar</button>
+  </form>
+</div>
+
+<%- include('../partials/admin-bottom') %>

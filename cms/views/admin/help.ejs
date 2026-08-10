@@ -1,0 +1,11 @@
+<%- include('../partials/admin-top', { pageTitle: 'Ayuda y tutorial', active: 'help' }) %>
+<%- include('../partials/admin-topline', { h1: 'Ayuda y tutorial', email: email, flash: flash }) %>
+<section class="card help-hero"><span class="eyebrow">Siempre disponible</span><h2>Edita con confianza, sin código.</h2><p>Usa el botón <b>?</b> en cualquier pantalla para abrir el tutorial guiado. La página se oscurece y te muestra los pasos esenciales.</p><button class="btn mint" type="button" data-admin-help-open>Iniciar tutorial</button></section>
+<section class="card faq-list"><h2>Preguntas frecuentes</h2>
+<details open><summary>¿Qué puedo editar sin riesgo?</summary><p>Textos, imágenes, videos del hero, servicios mediante listas, NOM‑037, eventos, páginas extra y blog. El sitio conserva el diseño, las tipografías y las adaptaciones para celular.</p></details>
+<details><summary>¿Qué no debo intentar cambiar?</summary><p>Las rutas base, colores, código, scripts y estructura global del encabezado o pie de página. Estas piezas quedan protegidas para evitar que una actualización rompa el sitio.</p></details>
+<details><summary>¿Cómo creo una página para un evento?</summary><p>Ve a “Páginas extra”, crea una página con la plantilla Evento, publícala y activa “mostrar en menú” si quieres que aparezca allí. Después, edita el evento y selecciónala en el campo de conexión.</p></details>
+<details><summary>¿Cómo aparece NOM‑037?</summary><p>Es el mensaje final de la página principal. Desde NOM‑037 puedes editarlo, reemplazar imagen, actualizar botón u ocultarlo temporalmente sin perder la información.</p></details>
+<details><summary>¿Por qué no hay una caja para pegar HTML?</summary><p>Porque el HTML puede romper la página o introducir contenido inseguro. En su lugar, cada lista se escribe por renglones y la plataforma genera el diseño correcto automáticamente.</p></details>
+</section>
+<%- include('../partials/admin-bottom') %>

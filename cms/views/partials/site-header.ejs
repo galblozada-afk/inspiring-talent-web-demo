@@ -1,0 +1,19 @@
+<div class="topbar"><%- topbarText || '' %><% (topbarLinks || []).forEach(function(l){ %>&nbsp;·&nbsp;<a href="<%= l.url %>" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;"><%= l.label %></a><% }) %></div>
+<header id="siteHeader">
+  <script src="https://kit.fontawesome.com/237c87b42b.js" crossorigin="anonymous"></script>
+  <div class="nav">
+    <a href="/" class="logo"><img src="/assets/logo-inspiringtalent.png" alt="InspiringTalent"></a>
+    <div class="nav-right">
+      <a href="https://wa.link/77etlj" class="phone-link"><i class="fa-brands fa-whatsapp fa-lg"></i> WhatsApp</a>
+      <a href="/contacto" class="btn btn-primary">Agenda una consultoría</a>
+      <button class="menu-toggle-btn" id="kineticToggle" aria-label="Abrir menú" aria-expanded="false"><span class="mt-text"><p id="mtP1">Menú</p><p id="mtP2">Cerrar</p></span><span class="icon-wrap"><svg id="mtIcon" viewBox="0 0 16 16" fill="none"><path d="M7.33333 16L7.33333 0L8.66667 0L8.66667 16L7.33333 16Z" fill="currentColor"></path><path d="M16 8.66667L0 8.66667L0 7.33333L16 7.33333L16 8.66667Z" fill="currentColor"></path></svg></span></button>
+    </div>
+  </div>
+</header>
+<div class="kinetic-overlay" id="kineticOverlay" data-nav="closed"><div class="kinetic-backdrop" id="kineticBackdrop" aria-hidden="true"></div><nav class="kinetic-menu" id="kineticMenu"><div class="kinetic-menu-bg"><div class="backdrop-layer first"></div><div class="backdrop-layer second"></div><div class="backdrop-layer third"></div></div><div class="kinetic-menu-inner"><ul class="kinetic-list">
+  <% const menuItems = [['/','Inicio'],['/coaching-organizacional','Coaching Organizacional'],['/formacion','Formación'],['/evaluacion-de-talento','Evaluación de Talento'],['/soluciones-para-empresas','Soluciones para Empresas'],['/nosotros','Nosotros'],['/contacto','Contacto'],['/blog','Blog']]; %>
+  <% menuItems.forEach(function(item, index) { %><li class="kinetic-item" data-shape="<%= (index % 6) + 1 %>"><a href="<%= item[0] %>" class="kinetic-link"><span class="kinetic-link-text"><%= item[1] %></span><span class="kinetic-link-bg"></span></a></li><% }); %>
+  <% (extraMenuPages || []).forEach(function(page, index) { %><li class="kinetic-item" data-shape="<%= ((index + 2) % 6) + 1 %>"><a href="/<%= page.slug %>" class="kinetic-link"><span class="kinetic-link-text"><%= page.menu_label || page.title %></span><span class="kinetic-link-bg"></span></a></li><% }); %>
+  <li class="kinetic-academy-item"><a href="https://login.inspiringtalent.mx/" class="kinetic-academy-link" target="_blank" rel="noopener">Academia Virtual <span aria-hidden="true">↗</span></a></li>
+</ul></div></nav></div>
+<script src="/site-nav.js" defer></script>

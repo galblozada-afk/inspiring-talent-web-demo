@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="/assets/img/favicon-inspiring.png">
+<link rel="apple-touch-icon" href="/assets/img/favicon-inspiring.png">
+<meta name="robots" content="noindex, nofollow">
+<title><%= typeof pageTitle !== 'undefined' ? pageTitle + ' · Admin' : 'Admin · InspiringTalent' %></title>
+<link rel="stylesheet" href="/admin.css">
+<link rel="stylesheet" href="/admin-help.css">
+</head>
+<body>
+<div class="admin-shell">
+  <aside class="admin-side">
+    <div class="brand">🔑 InspiringTalent</div>
+    <nav>
+      <a href="/admin/dashboard" class="<%= active === 'dashboard' ? 'active' : '' %>">Resumen</a>
+      <a href="/admin/hero" class="<%= active === 'hero' ? 'active' : '' %>">Hero (video/imagen)</a>
+      <a href="/admin/topbar" class="<%= active === 'topbar' ? 'active' : '' %>">Topbar / hipervínculos</a>
+      <a href="/admin/services" class="<%= active === 'services' ? 'active' : '' %>">Servicios</a>
+      <a href="/admin/nom037" class="<%= active === 'nom037' ? 'active' : '' %>">NOM-037</a>
+      <a href="/admin/events" class="<%= active === 'events' ? 'active' : '' %>">Próximos eventos</a>
+      <a href="/admin/pages" class="<%= active === 'pages' ? 'active' : '' %>">Páginas extra</a>
+      <a href="/admin/contacts" class="<%= active === 'contacts' ? 'active' : '' %>">Solicitudes de contacto</a>
+      <a href="/admin/blog" class="<%= active === 'blog' ? 'active' : '' %>">Blog</a>
+    </nav>
+    <div class="sep"></div>
+    <a class="view-site" href="/" target="_blank">Ver sitio público ↗</a>
+    <a class="view-site" href="/blog" target="_blank">Ver blog público ↗</a>
+  </aside>
+  <main class="admin-main">

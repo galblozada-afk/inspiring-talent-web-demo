@@ -1,0 +1,19 @@
+<%- include('../partials/admin-top', { pageTitle: event ? 'Editar evento' : 'Nuevo evento', active: 'events' }) %>
+<%- include('../partials/admin-topline', { h1: event ? 'Editar evento' : 'Nuevo evento', email: email, flash: flash }) %>
+
+<div class="card">
+  <form method="POST" action="<%= event ? '/admin/events/' + event.id + '/edit' : '/admin/events/new' %>" enctype="multipart/form-data">
+    <label>Título del evento</label><input type="text" name="title" value="<%= event ? event.title : '' %>" placeholder="Ej. Certificación Internacional en Coaching Organizacional" required>
+    <label>Descripción</label><textarea name="description" rows="4" placeholder="Qué vivirá la persona y por qué vale la pena asistir."><%= event ? event.description : '' %></textarea>
+    <div class="row"><div><label>Fecha</label><input type="date" name="event_date" value="<%= event ? event.event_date : '' %>"></div><div><label>Ciudad o modalidad</label><input type="text" name="location" value="<%= event ? event.location : '' %>" placeholder="CDMX · Presencial / En línea"></div></div>
+    <label>Imagen</label><% if (event && event.image) { %><img src="<%= event.image %>" style="max-width:280px;border-radius:8px;margin-bottom:8px;display:block;"><% } %><input type="file" name="image" accept="image/*"><p class="help-block">Recomendado: imagen horizontal de al menos 1600 × 900 px.</p>
+    <div class="row"><div><label>Texto del botón</label><input type="text" name="cta_label" value="<%= event ? event.cta_label : 'Conocer más' %>"></div><div><label>Enlace del botón</label><input type="url" name="cta_href" value="<%= event ? event.cta_href : '/contacto' %>"></div></div>
+    <label>Conectar este evento con una página creada aquí (opcional)</label>
+    <select name="page_id"><option value="">Usar el enlace escrito arriba</option><% pages.forEach(function(page){ %><option value="<%= page.id %>" <%= event && event.cta_href === '/' + page.slug ? 'selected' : '' %>><%= page.title %> · <%= page.status === 'published' ? 'publicada' : 'borrador' %></option><% }) %></select>
+    <p class="help-block">Primero crea la página en “Páginas extra”; después podrás enlazarla desde el carrusel.</p>
+    <label>Estado</label><select name="status"><option value="draft" <%= (!event || event.status === 'draft') ? 'selected' : '' %>>Borrador (no visible)</option><option value="published" <%= event && event.status === 'published' ? 'selected' : '' %>>Publicado</option></select>
+    <button class="btn" type="submit" style="margin-top:18px;"><%= event ? 'Guardar cambios' : 'Crear evento' %></button><a class="btn ghost" href="/admin/events" style="margin-top:18px;">Cancelar</a>
+  </form>
+</div>
+
+<%- include('../partials/admin-bottom') %>

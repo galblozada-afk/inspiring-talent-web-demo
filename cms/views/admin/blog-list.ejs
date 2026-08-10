@@ -1,0 +1,35 @@
+<%- include('../partials/admin-top', { pageTitle: 'Blog', active: 'blog' }) %>
+<%- include('../partials/admin-topline', { h1: 'Blog', email: email, flash: flash }) %>
+
+<div class="card">
+  <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:6px;">
+    <h2 style="margin:0;">Entradas</h2>
+    <div style="display:flex;gap:8px;"><a class="btn ghost" href="/admin/blog/badges">Badges</a><a class="btn mint" href="/admin/blog/new">+ Nueva entrada</a></div>
+  </div>
+  <table style="margin-top:14px;">
+    <thead><tr><th>Título</th><th>Estado</th><th>Actualizado</th><th></th></tr></thead>
+    <tbody>
+      <% if (!posts.length) { %>
+        <tr><td colspan="4" class="hint">Aún no hay entradas de blog.</td></tr>
+      <% } %>
+      <% posts.forEach(function(p){ %>
+        <tr>
+          <td><%= p.title %></td>
+          <td><span class="status-pill <%= p.status %>"><%= p.status === 'published' ? 'Publicado' : 'Borrador' %></span></td>
+          <td><%= new Date(p.updated_at).toLocaleDateString('es-MX') %></td>
+          <td class="actions-cell">
+            <a class="btn ghost small" href="/admin/blog/<%= p.id %>/edit">Editar</a>
+            <% if (p.status === 'published') { %>
+              <a class="btn ghost small" href="/blog/<%= p.slug %>" target="_blank">Ver</a>
+            <% } %>
+            <form method="POST" action="/admin/blog/<%= p.id %>/delete" onsubmit="return confirm('¿Eliminar esta entrada permanentemente?');">
+              <button class="btn danger small" type="submit">Eliminar</button>
+            </form>
+          </td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</div>
+
+<%- include('../partials/admin-bottom') %>

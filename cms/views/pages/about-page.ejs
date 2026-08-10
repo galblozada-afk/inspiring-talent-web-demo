@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="/assets/img/favicon-inspiring.png">
+  <link rel="apple-touch-icon" href="/assets/img/favicon-inspiring.png">
+  <title>Nosotros — InspiringTalent®</title>
+  <meta name="description" content="Conoce la experiencia, metodología y liderazgo de Inspiring Talent para transformar el desarrollo de personas y equipos.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Inter:wght@400;500;600;700&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/site.css">
+  <link rel="stylesheet" href="/about.css">
+  <link rel="stylesheet" href="/about-airam-proof.css">
+  <link rel="stylesheet" href="/about-airam-name.css">
+  <link rel="stylesheet" href="/subpage-editorial-hero.css">
+</head>
+<body class="about-page">
+  <%- include('../partials/site-header') %>
+  <main id="contenido">
+    <% /* The shared hero keeps subpages visually connected while the sections below retain the about story. */ %>
+    <%- include('../partials/subpage-editorial-hero', { page }) %>
+    <section class="about-hero" hidden>
+      <div class="about-orbit about-orbit--one" aria-hidden="true"></div><div class="about-orbit about-orbit--two" aria-hidden="true"></div>
+      <div class="about-wrap about-hero-grid">
+        <div>
+          <span class="eyebrow">Nosotros</span>
+          <p class="about-hero-legacy-title">El talento cambia cuando el trabajo se vuelve humano.</p>
+          <p>Inspiring Talent acompaña a organizaciones que necesitan hacer del desarrollo una práctica real: en sus líderes, conversaciones y decisiones.</p>
+          <a class="about-hero-cta" href="/contacto">Conversemos sobre tu reto <span aria-hidden="true">→</span></a>
+        </div>
+        <aside class="about-hero-note"><span>Una convicción</span><p>Hacer que las cosas sucedan hace la diferencia.</p><b>Aprendizaje · Creatividad · Compromiso</b></aside>
+      </div>
+    </section>
+
+    <section class="about-pains" aria-labelledby="pains-title">
+      <div class="about-wrap">
+        <div class="about-section-head" data-about-reveal><span class="eyebrow">El punto de partida</span><h2 id="pains-title">Antes de una solución, entendemos lo que duele.</h2><p>Las empresas no necesitan más iniciativas aisladas; necesitan capacidades que respondan al momento que vive su gente.</p></div>
+        <div class="about-pain-grid">
+          <% const pains = [
+            ['01', 'Liderazgo bajo presión', 'Cuando el cambio exige decisiones claras, conversaciones difíciles y líderes que sepan movilizar.'],
+            ['02', 'Equipos que no logran alinearse', 'Cuando la colaboración se desgasta, los acuerdos se diluyen y el desempeño pierde ritmo.'],
+            ['03', 'Talento sin una ruta visible', 'Cuando se necesita información útil para desarrollar fortalezas, roles y oportunidades reales.'],
+            ['04', 'Aprendizajes que no llegan al trabajo', 'Cuando la formación debe convertirse en práctica, seguimiento y resultados sostenibles.']
+          ]; pains.forEach(function(pain) { %>
+            <article class="about-pain" data-about-reveal><span><%= pain[0] %></span><h3><%= pain[1] %></h3><p><%= pain[2] %></p></article>
+          <% }); %>
+        </div>
+        <div class="about-answer" data-about-reveal><span>La respuesta Inspiring</span><p>Indagamos el contexto, evaluamos con propósito y acompañamos la práctica hasta que las nuevas capacidades encuentran lugar en el día a día.</p></div>
+      </div>
+    </section>
+
+    <section class="about-airam" aria-labelledby="airam-title">
+      <div class="about-wrap about-airam-grid">
+        <figure class="about-airam-portrait" data-about-reveal><img src="/assets/img/why-us-airam.png" alt="Airam Sánchez Santos, fundadora y directora general de Inspiring Talent" loading="lazy"><a class="about-airam-linkedin" href="https://www.linkedin.com/in/airam-sanchez-santos-02/" target="_blank" rel="noopener" aria-label="Ver el perfil de Airam Sánchez Santos en LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z"/></svg><span>LinkedIn</span></a><figcaption>Fundadora · Directora General · Coach</figcaption></figure>
+        <div class="about-airam-copy" data-about-reveal>
+          <span class="eyebrow">La mirada detrás de Inspiring</span>
+          <h2 id="airam-title" data-airam-letters="Airam Sánchez Santos">Airam Sánchez Santos</h2>
+          <p class="about-airam-lead">Fundadora y Directora General de Inspiring Talent®. Su práctica conecta el coaching organizacional, ejecutivo y de equipos con el aprendizaje que las empresas necesitan para avanzar.</p>
+          <p>Master Certified Coach (MCC) por la International Coaching Federation, ha acompañado a CEO’s, VP’s, directores y gerentes de compañías multinacionales. Su estilo integrador alinea los objetivos personales, del equipo y de la organización.</p>
+          <div class="about-airam-proof" data-airam-proof>
+            <div class="about-airam-certifications" aria-label="Credenciales profesionales de Airam Sánchez Santos"><img src="/assets/img/airam-credentials/mcc-badge.png" alt="Credencial Master Certified Coach de ICF" loading="lazy"><img src="/assets/img/airam-credentials/team-coaching-badge.png" alt="Certificación avanzada de coaching de equipos de ICF" loading="lazy"></div>
+            <div><b class="airam-proof-value" data-airam-count="2800" data-airam-suffix=" horas">2,800 horas</b><span>De práctica profesional de coaching</span></div>
+            <div><b class="airam-proof-value" data-airam-count="20" data-airam-suffix="+ años">20+ años</b><span>De docencia y trabajo frente a grupos</span></div>
+          </div>
+          <p class="about-airam-quote">El desarrollo cobra fuerza cuando una persona puede mirar su impacto y elegir una forma más consciente de actuar.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-impact" aria-labelledby="impact-title">
+      <div class="about-orbit about-orbit--three" aria-hidden="true"></div>
+      <div class="about-wrap">
+        <div class="about-impact-head" data-about-reveal><span class="eyebrow">Trayectoria que deja capacidad</span><h2 id="impact-title">Convertimos experiencia en avance visible.</h2><p>Estos indicadores hablan del alcance de una práctica construida junto a líderes, equipos y organizaciones.</p></div>
+        <div class="about-impact-grid" data-about-reveal>
+          <div class="about-impact-number"><b data-impact-count="20" data-impact-suffix="+">20+</b><span>Años en consultoría de talento</span></div>
+          <div class="about-impact-number"><b data-impact-count="15">15</b><span>Años en coaching organizacional, ejecutivo y de equipos</span></div>
+          <div class="about-impact-number"><b data-impact-count="11" data-impact-suffix="+">11+</b><span>Marcas que han confiado en nosotros</span></div>
+          <div class="about-impact-number about-impact-number--letters"><b>MX · US</b><span>Presencia en empresas multinacionales</span></div>
+        </div>
+        <div class="about-progress-list" data-about-reveal aria-label="Dimensiones del acompañamiento de Inspiring Talent">
+          <div><div><span>Entender el contexto</span><b>Indagación</b></div><i><em data-impact-progress="100"></em></i></div>
+          <div><div><span>Tomar mejores decisiones de talento</span><b>Evaluación</b></div><i><em data-impact-progress="96"></em></i></div>
+          <div><div><span>Convertir aprendizaje en práctica</span><b>Desarrollo</b></div><i><em data-impact-progress="94"></em></i></div>
+          <div><div><span>Sostener cambios en el tiempo</span><b>Seguimiento</b></div><i><em data-impact-progress="90"></em></i></div>
+        </div>
+        <div class="about-timeline" data-about-reveal><span>Una historia de acompañamiento</span><ol><li><b>Indagar</b><p>Escuchamos objetivos, tensiones y posibilidades.</p></li><li><b>Evaluar</b><p>Hacemos visible lo que el talento necesita saber.</p></li><li><b>Desarrollar</b><p>Practicamos nuevas competencias en contexto.</p></li><li><b>Implementar</b><p>Llevamos el aprendizaje al trabajo real.</p></li><li><b>Dar seguimiento</b><p>Convertimos la intención en una capacidad sostenible.</p></li></ol></div>
+      </div>
+    </section>
+
+    <section class="about-closing"><div class="about-wrap" data-about-reveal><span class="eyebrow">El siguiente capítulo</span><h2>Diseñemos una ruta para que tu talento avance.</h2><a href="/contacto" class="about-closing-cta">Agenda una consultoría <span aria-hidden="true">→</span></a></div></section>
+  </main>
+  <script>
+    (() => {
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const revealItems = document.querySelectorAll('[data-about-reveal]');
+      const progressBars = document.querySelectorAll('[data-impact-progress]');
+      const countItems = document.querySelectorAll('[data-impact-count]');
+      const airamSection = document.querySelector('.about-airam');
+      const airamProof = document.querySelector('[data-airam-proof]');
+      function reveal(entry) { entry.classList.add('is-about-visible'); }
+      function animateCount(element) {
+        const target = Number(element.dataset.impactCount); const suffix = element.dataset.impactSuffix || '';
+        if (reduceMotion) { element.textContent = target + suffix; return; }
+        const started = performance.now(); const duration = 1050;
+        function tick(now) { const progress = Math.min((now - started) / duration, 1); element.textContent = Math.round(target * (1 - Math.pow(1 - progress, 3))) + suffix; if (progress < 1) requestAnimationFrame(tick); }
+        requestAnimationFrame(tick);
+      }
+      function animateAiramProof() {
+        if (!airamProof || airamProof.dataset.animated) return;
+        airamProof.dataset.animated = 'true';
+        document.querySelectorAll('[data-airam-letters]').forEach(element => {
+          const letters = element.dataset.airamLetters || element.textContent;
+          if (reduceMotion) { element.textContent = letters; return; }
+          let letterIndex = 0;
+          element.innerHTML = letters.split(' ').map((word, wordIndex) => {
+            const wordMarkup = Array.from(word).map(letter => `<span class="airam-proof-value-char" style="--airam-letter-delay:${letterIndex++ * 42}ms">${letter}</span>`).join('');
+            return `<span class="airam-proof-value-word">${wordMarkup}</span>${wordIndex < letters.split(' ').length - 1 ? ' ' : ''}`;
+          }).join('');
+          requestAnimationFrame(() => element.classList.add('is-airam-letters-visible'));
+        });
+        document.querySelectorAll('[data-airam-count]').forEach(element => {
+          const target = Number(element.dataset.airamCount); const suffix = element.dataset.airamSuffix || '';
+          if (reduceMotion) { element.textContent = target.toLocaleString('en-US') + suffix; return; }
+          const started = performance.now(); const duration = 1100;
+          function tick(now) { const progress = Math.min((now - started) / duration, 1); element.textContent = Math.round(target * (1 - Math.pow(1 - progress, 3))).toLocaleString('en-US') + suffix; if (progress < 1) requestAnimationFrame(tick); }
+          requestAnimationFrame(tick);
+        });
+      }
+      if (reduceMotion || !('IntersectionObserver' in window)) { revealItems.forEach(reveal); progressBars.forEach(bar => bar.style.setProperty('--impact-progress', bar.dataset.impactProgress + '%')); countItems.forEach(animateCount); animateAiramProof(); return; }
+      const observer = new IntersectionObserver(entries => entries.forEach(entry => { if (entry.isIntersecting) { reveal(entry.target); observer.unobserve(entry.target); } }), { threshold: .16 });
+      revealItems.forEach(item => observer.observe(item));
+      const impactObserver = new IntersectionObserver(entries => entries.forEach(entry => { if (!entry.isIntersecting) return; progressBars.forEach(bar => bar.style.setProperty('--impact-progress', bar.dataset.impactProgress + '%')); countItems.forEach(animateCount); impactObserver.disconnect(); }), { threshold: .28 });
+      const impact = document.querySelector('.about-impact'); if (impact) impactObserver.observe(impact);
+      const airamObserver = new IntersectionObserver(entries => entries.forEach(entry => { if (!entry.isIntersecting) return; animateAiramProof(); airamObserver.disconnect(); }), { threshold: .3 });
+      if (airamSection) airamObserver.observe(airamSection);
+    })();
+  </script>
+  <%- include('../partials/site-footer') %>
+</body>
+</html>

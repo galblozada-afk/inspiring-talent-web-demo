@@ -1,0 +1,59 @@
+require('dotenv').config();
+const path = require('path');
+const express = require('express');
+const session = require('express-session');
+const FileStore = require('session-file-store')(session);
+const helmet = require('helmet');
+
+require('./db'); // crea data/db.json si no existe
+
+const app = express();
+const PORT = process.env.PORT || 3000;
+const isProd = process.env.NODE_ENV === 'production';
+
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+
+// Necesario en Render/Railway/Heroku y similares: el proxy termina el HTTPS
+// y reenvía por HTTP interno, así que Express debe confiar en el header
+// X-Forwarded-Proto para saber que la conexión original sí es segura.
+if (isProd) app.set('trust proxy', 1);
+
+app.use(helmet({
+  contentSecurityPolicy: false // el sitio carga CDNs externos (gsap, fontawesome); ajusta esto si lo endureces luego
+}));
+
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use('/uploads', express.static(path.join(__dirname, 'public', 'uploads')));
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(session({
+  store: new FileStore({ path: path.join(__dirname, 'data', 'sessions'), logFn: () => {} }),
+  secret: process.env.SESSION_SECRET || 'change-this-secret-please',
+  resave: false,
+  saveUninitialized: false,
+  cookie: {
+    httpOnly: true,
+    secure: isProd, // en producción detrás de HTTPS, poner NODE_ENV=production
+    sameSite: 'lax',
+    maxAge: 1000 * 60 * 60 * 8 // 8 horas
+  }
+}));
+
+app.use('/admin', require('./routes/admin'));
+app.use('/', require('./routes/public'));
+
+app.use((req, res) => {
+  res.status(404).send('Página no encontrada');
+});
+
+// Netlify Functions importa la aplicación sin levantar un servidor persistente.
+// En local/Render/Railway seguimos arrancando Express normalmente.
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`InspiringTalent CMS corriendo en http://localhost:${PORT}`);
+  });
+}
+
+module.exports = app;

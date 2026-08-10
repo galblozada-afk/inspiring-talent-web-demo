@@ -1,0 +1,55 @@
+<%- include('../partials/admin-top', { pageTitle: 'Topbar', active: 'topbar' }) %>
+<%- include('../partials/admin-topline', { h1: 'Topbar', email: email, flash: flash }) %>
+
+<div class="card topbar-editor">
+  <h2>Texto principal del topbar</h2>
+  <p class="topbar-editor-message">Escribe el mensaje tal como quieres que se lea arriba del sitio. No necesitas usar etiquetas ni código.</p>
+  <p class="hint">Es la franja superior del sitio (ej. "+20 años de experiencia..."). Acepta HTML simple como &lt;b&gt;.</p>
+  <form method="POST" action="/admin/topbar/text">
+    <label for="topbarText">Mensaje de la franja superior</label>
+    <textarea id="topbarText" name="topbar_text" rows="3" maxlength="180" placeholder="Ej. Más de 20 años de experiencia en consultoría de talento · Programa NOM-037 disponible"><%= topbarText %></textarea>
+    <p class="help-block">Tip: usa frases cortas. Los enlaces se agregan abajo, sin escribir código.</p>
+    <button class="btn" type="submit" style="margin-top:14px;">Guardar texto</button>
+  </form>
+</div>
+
+<div class="card">
+  <h2>Hipervínculos del topbar</h2>
+  <p class="hint">Se muestran después del texto principal, separados por "·". Se abren en una pestaña nueva.</p>
+
+  <table style="margin-bottom:18px;">
+    <thead><tr><th>Etiqueta</th><th>URL</th><th></th></tr></thead>
+    <tbody>
+      <% if (!links.length) { %>
+        <tr><td colspan="3" class="hint">Aún no hay hipervínculos agregados.</td></tr>
+      <% } %>
+      <% links.forEach(function(l){ %>
+        <tr>
+          <td><%= l.label %></td>
+          <td><%= l.url %></td>
+          <td>
+            <form method="POST" action="/admin/topbar/links/<%= l.id %>/delete" onsubmit="return confirm('¿Eliminar este hipervínculo?');">
+              <button class="btn danger small" type="submit">Eliminar</button>
+            </form>
+          </td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+
+  <form method="POST" action="/admin/topbar/links/add" style="border-top:1px solid #e2e5ea;padding-top:16px;">
+    <div class="row">
+      <div>
+        <label>Etiqueta</label>
+        <input type="text" name="label" placeholder="Ej. Aviso de privacidad" required>
+      </div>
+      <div>
+        <label>URL</label>
+        <input type="url" name="url" placeholder="https://..." required>
+      </div>
+    </div>
+    <button class="btn mint" type="submit" style="margin-top:16px;">Agregar hipervínculo</button>
+  </form>
+</div>
+
+<%- include('../partials/admin-bottom') %>
