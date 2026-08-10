@@ -29,7 +29,8 @@ app.use(express.json());
 app.use('/uploads', express.static(path.join(__dirname, 'public', 'uploads')));
 app.use(express.static(path.join(__dirname, 'public')));
 
-const sessionDir = process.env.NETLIFY ? path.join('/tmp', 'inspiring-talent-sessions') : path.join(__dirname, 'data', 'sessions');
+const isServerless = process.env.NETLIFY || process.env.AWS_LAMBDA_FUNCTION_NAME || process.env.LAMBDA_TASK_ROOT || __dirname.includes('netlify/functions');
+const sessionDir = isServerless ? path.join('/tmp', 'inspiring-talent-sessions') : path.join(__dirname, 'data', 'sessions');
 if (!fs.existsSync(sessionDir)) fs.mkdirSync(sessionDir, { recursive: true });
 app.use(session({
   store: new FileStore({ path: sessionDir, logFn: () => {} }),

@@ -4,7 +4,9 @@
 const fs = require('fs');
 const path = require('path');
 
-const IS_NETLIFY = process.env.NETLIFY === 'true' || Boolean(process.env.NETLIFY);
+const IS_NETLIFY = process.env.NETLIFY === 'true' || Boolean(process.env.NETLIFY)
+  || Boolean(process.env.AWS_LAMBDA_FUNCTION_NAME || process.env.LAMBDA_TASK_ROOT)
+  || __dirname.includes('netlify/functions');
 const DATA_DIR = IS_NETLIFY ? path.join('/tmp', 'inspiring-talent-data') : path.join(__dirname, 'data');
 const DB_FILE = path.join(DATA_DIR, 'db.json');
 const SEED_DB_CANDIDATES = [
