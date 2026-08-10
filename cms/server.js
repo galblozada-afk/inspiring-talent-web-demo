@@ -11,9 +11,10 @@ require('./db'); // crea data/db.json si no existe
 const app = express();
 const PORT = process.env.PORT || 3000;
 const isProd = process.env.NODE_ENV === 'production';
+const appRoot = __dirname.includes('netlify/functions') ? path.resolve(__dirname, '..', '..') : __dirname;
 
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(appRoot, 'views'));
 
 // Necesario en Render/Railway/Heroku y similares: el proxy termina el HTTPS
 // y reenvía por HTTP interno, así que Express debe confiar en el header
@@ -30,7 +31,7 @@ const isServerless = process.env.NETLIFY || process.env.AWS_LAMBDA_FUNCTION_NAME
 const uploadRoot = isServerless ? path.join('/tmp', 'inspiring-talent-uploads') : path.join(__dirname, 'public', 'uploads');
 if (!fs.existsSync(uploadRoot)) fs.mkdirSync(uploadRoot, { recursive: true });
 app.use('/uploads', express.static(uploadRoot));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(appRoot, 'public')));
 
 const sessionDir = isServerless ? path.join('/tmp', 'inspiring-talent-sessions') : path.join(__dirname, 'data', 'sessions');
 if (!fs.existsSync(sessionDir)) fs.mkdirSync(sessionDir, { recursive: true });
